@@ -1,0 +1,5 @@
+outs:
+- md5: 88394b09366a2014ada94c87863c4fd0
+  size: 6980142
+  hash: md5
+  path: train2.tsv
