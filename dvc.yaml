@@ -1,0 +1,22 @@
+stages:
+  balance_test2:
+    cmd: python src/balance.py test2
+    deps:
+    - data/test2.tsv
+    - src/balance.py
+    outs:
+    - datasets_balance/test2.png
+  balance_val2:
+    cmd: python src/balance.py val2
+    deps:
+    - data/val2.tsv
+    - src/balance.py
+    outs:
+    - datasets_balance/val2.png
+  balance_train2:
+    cmd: python src/balance.py train2
+    deps:
+    - data/train2.tsv
+    - src/balance.py
+    outs:
+    - datasets_balance/train2.png

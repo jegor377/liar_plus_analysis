@@ -1,0 +1,50 @@
+schema: '2.0'
+stages:
+  balance_test2:
+    cmd: python src/balance.py test2
+    deps:
+    - path: data/test2.tsv
+      hash: md5
+      md5: 3a32026021e53663a7de5e948b28c2e4
+      size: 871199
+    - path: src/balance.py
+      hash: md5
+      md5: c9fe531bfaa15f32e0791d176d42e04f
+      size: 1561
+    outs:
+    - path: datasets_balance/test2.png
+      hash: md5
+      md5: 5fb80d5bfe2d1c3ce3b8619fed838e53
+      size: 36240
+  balance_val2:
+    cmd: python src/balance.py val2
+    deps:
+    - path: data/val2.tsv
+      hash: md5
+      md5: e6e50c24f3d0054011cb5a206897e87f
+      size: 865142
+    - path: src/balance.py
+      hash: md5
+      md5: c9fe531bfaa15f32e0791d176d42e04f
+      size: 1561
+    outs:
+    - path: datasets_balance/val2.png
+      hash: md5
+      md5: 7d149463e665168fd07613e07cd3379b
+      size: 36615
+  balance_train2:
+    cmd: python src/balance.py train2
+    deps:
+    - path: data/train2.tsv
+      hash: md5
+      md5: 88394b09366a2014ada94c87863c4fd0
+      size: 6980142
+    - path: src/balance.py
+      hash: md5
+      md5: c9fe531bfaa15f32e0791d176d42e04f
+      size: 1561
+    outs:
+    - path: datasets_balance/train2.png
+      hash: md5
+      md5: aba294f9eefe3e275cd49e6386de6432
+      size: 36760
