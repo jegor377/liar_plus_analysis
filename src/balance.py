@@ -7,8 +7,8 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 
-def autopct_format(values: pd.Series[int]) -> Callable[[int], str]:
-    def my_format(pct: int) -> str:
+def autopct_format(values: pd.Series[int]) -> Callable[[float], str]:
+    def my_format(pct: float) -> str:
         total = sum(values)
         val = int(round(pct*total/100.0))
         return '{:.1f}%\n({v:d})'.format(pct, v=val)
