@@ -1,10 +1,13 @@
 from __future__ import annotations
 
-import argparse
+import os
 from collections.abc import Callable
 
 import matplotlib.pyplot as plt
 import pandas as pd
+
+DATASETS_BALANCE_DIR = "./datasets_balance"
+DATA_DIR = "./data"
 
 
 def autopct_format(values: pd.Series[int]) -> Callable[[float], str]:
@@ -16,7 +19,9 @@ def autopct_format(values: pd.Series[int]) -> Callable[[float], str]:
 
 
 def plot_balance(name: str) -> None:
-    dataset = pd.read_csv(f'./data/{name}.tsv', header=None, sep="\t")
+    global DATA_DIR
+    global DATASETS_BALANCE_DIR
+    dataset = pd.read_csv(f'{DATA_DIR}/{name}.tsv', header=None, sep="\t")
     dataset.columns = [
         "id",
         "json_id",
@@ -39,22 +44,38 @@ def plot_balance(name: str) -> None:
     plt.cla()
     plt.clf()
     plt.close()
+
+    colors = [
+        'orangered',  # pants-fire
+        'coral',  # false
+        'salmon',  # barely-true
+        'peachpuff',  # half-true
+        'skyblue',  # mostly-true
+        'deepskyblue'  # true
+    ]
+    labels = [
+        'pants-fire',
+        'false',
+        'barely-true',
+        'half-true',
+        'mostly-true',
+        'true'
+    ]
+
     plt.title(f'{name}.tsv dataset balance')
-    plt.pie(label_counts, labels=label_counts.index,
-            autopct=autopct_format(label_counts))
-    plt.savefig(f"./datasets_balance/{name}.png")
+    plt.pie(label_counts, labels=labels,
+            autopct=autopct_format(label_counts),
+            colors=colors)
+    plt.savefig(f"{DATASETS_BALANCE_DIR}/{name}.png")
+    print(f'{name} dataset plotted correctly!')
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(
-        description="Creates balance plot for dataset",
-        formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-    parser.add_argument(
-        "name",
-        type=str,
-        help="Dataset file name without extension in data directory")
-    args = parser.parse_args()
-    config = vars(args)
-    name = config['name']
-    plot_balance(name)
-    print(f'{name} dataset plotted correctly!')
+    if not os.path.isdir(DATASETS_BALANCE_DIR):
+        os.mkdir(DATASETS_BALANCE_DIR)
+        with open(f'{DATASETS_BALANCE_DIR}/.gitignore', 'w') as f:
+            f.write("*\n")
+
+    plot_balance("test2")
+    plot_balance("val2")
+    plot_balance("train2")
