@@ -1,50 +1,46 @@
 schema: '2.0'
 stages:
-  balance_test2:
-    cmd: python src/balance.py test2
+  balance:
+    cmd: python src/balance.py
     deps:
     - path: data/test2.tsv
       hash: md5
       md5: 3a32026021e53663a7de5e948b28c2e4
       size: 871199
-    - path: src/balance.py
+    - path: data/train2.tsv
       hash: md5
-      md5: c9fe531bfaa15f32e0791d176d42e04f
-      size: 1561
-    outs:
-    - path: datasets_balance/test2.png
-      hash: md5
-      md5: 5fb80d5bfe2d1c3ce3b8619fed838e53
-      size: 36240
-  balance_val2:
-    cmd: python src/balance.py val2
-    deps:
+      md5: 88394b09366a2014ada94c87863c4fd0
+      size: 6980142
     - path: data/val2.tsv
       hash: md5
       md5: e6e50c24f3d0054011cb5a206897e87f
       size: 865142
     - path: src/balance.py
       hash: md5
-      md5: c9fe531bfaa15f32e0791d176d42e04f
-      size: 1561
+      md5: 6d588b499d28520773fafd5a89bb943d
+      size: 3528
     outs:
-    - path: datasets_balance/val2.png
+    - path: datasets_balance/test2.png
       hash: md5
-      md5: 7d149463e665168fd07613e07cd3379b
-      size: 36615
-  balance_train2:
-    cmd: python src/balance.py train2
-    deps:
-    - path: data/train2.tsv
-      hash: md5
-      md5: 88394b09366a2014ada94c87863c4fd0
-      size: 6980142
-    - path: src/balance.py
-      hash: md5
-      md5: c9fe531bfaa15f32e0791d176d42e04f
-      size: 1561
-    outs:
+      md5: aaa099fc6cede3a4742c5dd4cee1a139
+      size: 34723
     - path: datasets_balance/train2.png
       hash: md5
-      md5: aba294f9eefe3e275cd49e6386de6432
-      size: 36760
+      md5: 8a1b5ad7e1b21df25cb98bd543afc111
+      size: 34758
+    - path: datasets_balance/val2.png
+      hash: md5
+      md5: fb6cb7f832760eab30726950cc869c72
+      size: 34944
+    - path: datasets_balance_diffs/test2-train2.png
+      hash: md5
+      md5: 53ea3de38737640e1aae22da56ac53e5
+      size: 30528
+    - path: datasets_balance_diffs/test2-val2.png
+      hash: md5
+      md5: 75dcad32f95917ab372bd00584ccef59
+      size: 26820
+    - path: datasets_balance_diffs/val2-train2.png
+      hash: md5
+      md5: 068a2fa140b95a341d29a2ef87a3c4a9
+      size: 26316

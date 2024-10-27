@@ -10,3 +10,6 @@ stages:
     - datasets_balance/test2.png
     - datasets_balance/val2.png
     - datasets_balance/train2.png
+    - datasets_balance_diffs/test2-train2.png
+    - datasets_balance_diffs/test2-val2.png
+    - datasets_balance_diffs/val2-train2.png
