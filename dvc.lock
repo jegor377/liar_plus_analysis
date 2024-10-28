@@ -17,30 +17,30 @@ stages:
       size: 865142
     - path: src/balance.py
       hash: md5
-      md5: 77b71df791f1e0a081d9f83fe43bc81b
-      size: 1201
+      md5: 2378db4962ef8e8e0bc758572ed484f7
+      size: 1162
     - path: src/balance_misc/__init__.py
       hash: md5
       md5: ef9703e8ad9f7bda0c5643fe092a3dd4
       size: 82
     - path: src/balance_misc/balance_conf.py
       hash: md5
-      md5: a4b6af7b4ebe5ccd1acb865287f174a0
-      size: 429
+      md5: bf38a3276220fff965a719a106245473
+      size: 479
     - path: src/balance_misc/ds_loader.py
       hash: md5
       md5: 88591470a760841a934c2215b3cedb71
       size: 666
     outs:
-    - path: datasets_balance/test2.png
+    - path: plots/balance/test2.png
       hash: md5
       md5: aaa099fc6cede3a4742c5dd4cee1a139
       size: 34723
-    - path: datasets_balance/train2.png
+    - path: plots/balance/train2.png
       hash: md5
       md5: 8a1b5ad7e1b21df25cb98bd543afc111
       size: 34758
-    - path: datasets_balance/val2.png
+    - path: plots/balance/val2.png
       hash: md5
       md5: fb6cb7f832760eab30726950cc869c72
       size: 34944
@@ -69,22 +69,58 @@ stages:
       size: 82
     - path: src/balance_misc/balance_conf.py
       hash: md5
-      md5: a4b6af7b4ebe5ccd1acb865287f174a0
-      size: 429
+      md5: bf38a3276220fff965a719a106245473
+      size: 479
     - path: src/balance_misc/ds_loader.py
       hash: md5
       md5: 88591470a760841a934c2215b3cedb71
       size: 666
     outs:
-    - path: datasets_balance_diffs/test2-train2.png
+    - path: plots/balance_diffs/test2-train2.png
       hash: md5
       md5: 53ea3de38737640e1aae22da56ac53e5
       size: 30528
-    - path: datasets_balance_diffs/test2-val2.png
+    - path: plots/balance_diffs/test2-val2.png
       hash: md5
       md5: 75dcad32f95917ab372bd00584ccef59
       size: 26820
-    - path: datasets_balance_diffs/val2-train2.png
+    - path: plots/balance_diffs/val2-train2.png
       hash: md5
       md5: 068a2fa140b95a341d29a2ef87a3c4a9
       size: 26316
+  balance_boxplot:
+    cmd: python src/balance_boxplot.py
+    deps:
+    - path: data/test2.tsv
+      hash: md5
+      md5: 3a32026021e53663a7de5e948b28c2e4
+      size: 871199
+    - path: data/train2.tsv
+      hash: md5
+      md5: 88394b09366a2014ada94c87863c4fd0
+      size: 6980142
+    - path: data/val2.tsv
+      hash: md5
+      md5: e6e50c24f3d0054011cb5a206897e87f
+      size: 865142
+    - path: src/balance_boxplot.py
+      hash: md5
+      md5: c2c49602de1ae61063b2e0d5f27a7614
+      size: 1039
+    - path: src/balance_misc/__init__.py
+      hash: md5
+      md5: ef9703e8ad9f7bda0c5643fe092a3dd4
+      size: 82
+    - path: src/balance_misc/balance_conf.py
+      hash: md5
+      md5: bf38a3276220fff965a719a106245473
+      size: 479
+    - path: src/balance_misc/ds_loader.py
+      hash: md5
+      md5: 88591470a760841a934c2215b3cedb71
+      size: 666
+    outs:
+    - path: plots/balance_median/boxplot.png
+      hash: md5
+      md5: fb40c17ce94f1b1f9efe8e061d3e5f24
+      size: 20805
