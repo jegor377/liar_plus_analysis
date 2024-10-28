@@ -1,5 +1,6 @@
-DATASETS_BALANCE_DIR = "./datasets_balance"
-DATASETS_BALANCE_DIFFS_DIR = "./datasets_balance_diffs"
+DATASETS_BALANCE_DIR = "./plots/balance"
+DATASETS_BALANCE_DIFFS_DIR = "./plots/balance_diffs"
+DATASETS_BALANCE_MEDIAN_DIR = "./plots/balance_median"
 DATA_DIR = "./data"
 
 

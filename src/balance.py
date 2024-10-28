@@ -17,23 +17,20 @@ def autopct_format(values: pd.Series[int]) -> Callable[[float], str]:
     return my_format
 
 
-def plot_balance(name: str) -> pd.Series[int]:
+def plot_balance(name: str) -> None:
     label_counts = load_dataset(name)['label'].value_counts()
-
     plt.cla()
     plt.clf()
     plt.close()
     plt.title(f'{name}.tsv dataset balance')
-
     plt.pie(label_counts, labels=label_counts.index,
             autopct=autopct_format(label_counts),
             colors=label_colors(list(label_counts.index)))
     plt.savefig(f"{DATASETS_BALANCE_DIR}/{name}.png")
     print(f'{name} dataset plotted correctly!')
-    return label_counts
 
 
 if __name__ == '__main__':
-    test2_label_counts = plot_balance("test2")
-    val2_label_counts = plot_balance("val2")
-    train2_label_counts = plot_balance("train2")
+    plot_balance("test2")
+    plot_balance("val2")
+    plot_balance("train2")
