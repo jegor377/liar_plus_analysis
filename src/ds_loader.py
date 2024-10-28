@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import pandas as pd
 
-from balance_misc.balance_conf import DATA_DIR
+from balance_misc.conf import DATA_DIR
 
 
 def load_dataset(name: str) -> pd.DataFrame:

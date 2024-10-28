@@ -1,3 +1,3 @@
-__all__ = ["balance_conf", "ds_loader"]
+__all__ = ["conf"]
 
-from . import balance_conf, ds_loader
+from . import conf

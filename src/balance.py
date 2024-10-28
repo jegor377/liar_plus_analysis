@@ -5,8 +5,8 @@ from collections.abc import Callable
 import matplotlib.pyplot as plt
 import pandas as pd
 
-from balance_misc.balance_conf import DATASETS_BALANCE_DIR, label_colors
-from balance_misc.ds_loader import load_dataset
+from balance_misc.conf import DATASETS_BALANCE_DIR, label_colors
+from ds_loader import load_dataset
 
 
 def autopct_format(values: pd.Series[int]) -> Callable[[float], str]:

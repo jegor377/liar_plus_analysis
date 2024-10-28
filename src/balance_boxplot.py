@@ -2,8 +2,8 @@ from __future__ import annotations
 
 import matplotlib.pyplot as plt
 
-from balance_misc.balance_conf import DATASETS_BALANCE_MEDIAN_DIR
-from balance_misc.ds_loader import load_dataset
+from balance_misc.conf import DATASETS_BALANCE_MEDIAN_DIR
+from ds_loader import load_dataset
 
 
 def plot_boxplot(names: list[str]) -> None:
