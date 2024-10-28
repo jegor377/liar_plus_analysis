@@ -18,7 +18,7 @@ def plot_boxplot(names: list[str]) -> None:
     plt.clf()
     plt.close()
     plt.title(f'{", ".join(names)} datasets balance')
-    plt.ylabel("percentage of whole dataset")
+    plt.ylabel("% of whole dataset")
     plt.boxplot(labels_counts)
     plt.xticks(list(range(len(names))), names)
     for x in range(len(names)):
