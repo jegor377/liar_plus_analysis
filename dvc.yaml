@@ -6,10 +6,22 @@ stages:
     - data/val2.tsv
     - data/train2.tsv
     - src/balance.py
+    - src/balance_misc/ds_loader.py
+    - src/balance_misc/balance_conf.py
     outs:
     - datasets_balance/test2.png
     - datasets_balance/val2.png
     - datasets_balance/train2.png
+  balance_difference:
+    cmd: python src/balance_difference.py
+    deps:
+    - data/test2.tsv
+    - data/val2.tsv
+    - data/train2.tsv
+    - src/balance_difference.py
+    - src/balance_misc/ds_loader.py
+    - src/balance_misc/balance_conf.py
+    outs:
     - datasets_balance_diffs/test2-train2.png
     - datasets_balance_diffs/test2-val2.png
     - datasets_balance_diffs/val2-train2.png

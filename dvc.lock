@@ -17,8 +17,16 @@ stages:
       size: 865142
     - path: src/balance.py
       hash: md5
-      md5: 6d588b499d28520773fafd5a89bb943d
-      size: 3528
+      md5: e405dcfe0eba2b7c7d2f0ebf8eff5c5f
+      size: 1205
+    - path: src/balance_misc/balance_conf.py
+      hash: md5
+      md5: 121bca4b17a47c26c0c2db723864465c
+      size: 425
+    - path: src/balance_misc/ds_loader.py
+      hash: md5
+      md5: 3029410bca9d63741be0d5ed618a88fd
+      size: 664
     outs:
     - path: datasets_balance/test2.png
       hash: md5
@@ -32,6 +40,34 @@ stages:
       hash: md5
       md5: fb6cb7f832760eab30726950cc869c72
       size: 34944
+  balance_difference:
+    cmd: python src/balance_difference.py
+    deps:
+    - path: data/test2.tsv
+      hash: md5
+      md5: 3a32026021e53663a7de5e948b28c2e4
+      size: 871199
+    - path: data/train2.tsv
+      hash: md5
+      md5: 88394b09366a2014ada94c87863c4fd0
+      size: 6980142
+    - path: data/val2.tsv
+      hash: md5
+      md5: e6e50c24f3d0054011cb5a206897e87f
+      size: 865142
+    - path: src/balance_difference.py
+      hash: md5
+      md5: 4a9871abfe1d26e65e34d2a103f2688b
+      size: 2011
+    - path: src/balance_misc/balance_conf.py
+      hash: md5
+      md5: 121bca4b17a47c26c0c2db723864465c
+      size: 425
+    - path: src/balance_misc/ds_loader.py
+      hash: md5
+      md5: 3029410bca9d63741be0d5ed618a88fd
+      size: 664
+    outs:
     - path: datasets_balance_diffs/test2-train2.png
       hash: md5
       md5: 53ea3de38737640e1aae22da56ac53e5
