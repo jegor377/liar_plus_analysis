@@ -8,6 +8,7 @@ stages:
     - src/balance.py
     - src/balance_misc/ds_loader.py
     - src/balance_misc/balance_conf.py
+    - src/balance_misc/__init__.py
     outs:
     - datasets_balance/test2.png
     - datasets_balance/val2.png
@@ -21,6 +22,7 @@ stages:
     - src/balance_difference.py
     - src/balance_misc/ds_loader.py
     - src/balance_misc/balance_conf.py
+    - src/balance_misc/__init__.py
     outs:
     - datasets_balance_diffs/test2-train2.png
     - datasets_balance_diffs/test2-val2.png
