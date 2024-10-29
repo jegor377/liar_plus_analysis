@@ -6,8 +6,8 @@ stages:
     - data/val2.tsv
     - data/train2.tsv
     - src/balance.py
-    - src/balance_misc/ds_loader.py
-    - src/balance_misc/balance_conf.py
+    - src/ds_loader.py
+    - src/balance_misc/conf.py
     - src/balance_misc/__init__.py
     outs:
     - plots/balance/test2.png
@@ -20,8 +20,8 @@ stages:
     - data/val2.tsv
     - data/train2.tsv
     - src/balance_difference.py
-    - src/balance_misc/ds_loader.py
-    - src/balance_misc/balance_conf.py
+    - src/ds_loader.py
+    - src/balance_misc/conf.py
     - src/balance_misc/__init__.py
     outs:
     - plots/balance_diffs/test2-train2.png
@@ -34,8 +34,8 @@ stages:
     - data/val2.tsv
     - data/train2.tsv
     - src/balance_boxplot.py
-    - src/balance_misc/ds_loader.py
-    - src/balance_misc/balance_conf.py
+    - src/ds_loader.py
+    - src/balance_misc/conf.py
     - src/balance_misc/__init__.py
     outs:
     - plots/balance_median/boxplot.png
