@@ -5,12 +5,12 @@ DATA_DIR = "./data"
 
 
 colors_dict = {
-    'pants-fire': 'orangered',
-    'false': 'coral',
-    'barely-true': 'salmon',
-    'half-true': 'peachpuff',
-    'mostly-true': 'skyblue',
-    'true': 'deepskyblue'
+    'pants-fire': '#cd001a',
+    'false': '#ef6a00',
+    'barely-true': '#f2cd00',
+    'half-true': '#79c300',
+    'mostly-true': '#1961ae',
+    'true': '#61007d'
 }
 
 

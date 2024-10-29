@@ -1,8 +1,10 @@
 from __future__ import annotations
 
+import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
 
-from balance_misc.conf import DATASETS_BALANCE_MEDIAN_DIR
+from balance_misc.conf import (DATASETS_BALANCE_MEDIAN_DIR, colors_dict,
+                               label_colors)
 from ds_loader import load_dataset
 
 
@@ -22,8 +24,15 @@ def plot_boxplot(names: list[str]) -> None:
     plt.boxplot(labels_counts)
     plt.xticks(list(range(len(names))), names)
     for x in range(len(names)):
-        for y in labels_counts[x]:
-            plt.plot(x + 1, y, 'r.', alpha=0.5)
+        for i, y in enumerate(labels_counts[x]):
+            plt.scatter(x + 1, y, c=label_colors(labels_counts[x].index)[i])
+    patches = []
+    labels = list(colors_dict.keys())
+    colors = label_colors(labels)
+    for i, label in enumerate(labels):
+        patches.append(mpatches.Patch(color=colors[i], label=label))
+    plt.legend(bbox_to_anchor=(1.05, 1.0), loc='upper left', handles=patches)
+    plt.tight_layout()
     plt.savefig(f"{DATASETS_BALANCE_MEDIAN_DIR}/boxplot.png")
     print('boxplot plotted correctly!')
 
