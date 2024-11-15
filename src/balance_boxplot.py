@@ -3,8 +3,7 @@ from __future__ import annotations
 import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
 
-from balance_misc.conf import (DATASETS_BALANCE_MEDIAN_DIR, colors_dict,
-                               label_colors)
+from conf import DATASETS_BALANCE_MEDIAN_DIR, colors_dict, label_colors
 from ds_loader import load_dataset
 
 
