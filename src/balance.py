@@ -5,7 +5,7 @@ from collections.abc import Callable
 import matplotlib.pyplot as plt
 import pandas as pd
 
-from balance_misc.conf import DATASETS_BALANCE_DIR, label_colors
+from conf import DATASETS_BALANCE_DIR, label_colors
 from ds_loader import load_dataset
 
 

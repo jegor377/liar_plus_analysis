@@ -1,8 +1,8 @@
+DATA_DIR = "./data"
 DATASETS_BALANCE_DIR = "./plots/balance"
 DATASETS_BALANCE_DIFFS_DIR = "./plots/balance_diffs"
 DATASETS_BALANCE_MEDIAN_DIR = "./plots/balance_median"
-DATA_DIR = "./data"
-
+DATASETS_COUNTS_DIR = "./plots/counts"
 
 colors_dict = {
     'pants-fire': '#cd001a',

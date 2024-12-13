@@ -7,8 +7,7 @@ stages:
     - data/train2.tsv
     - src/balance.py
     - src/ds_loader.py
-    - src/balance_misc/conf.py
-    - src/balance_misc/__init__.py
+    - src/conf.py
     outs:
     - plots/balance/test2.png
     - plots/balance/val2.png
@@ -21,8 +20,7 @@ stages:
     - data/train2.tsv
     - src/balance_difference.py
     - src/ds_loader.py
-    - src/balance_misc/conf.py
-    - src/balance_misc/__init__.py
+    - src/conf.py
     outs:
     - plots/balance_diffs/test2-train2.png
     - plots/balance_diffs/test2-val2.png
@@ -35,7 +33,19 @@ stages:
     - data/train2.tsv
     - src/balance_boxplot.py
     - src/ds_loader.py
-    - src/balance_misc/conf.py
-    - src/balance_misc/__init__.py
+    - src/conf.py
     outs:
     - plots/balance_median/boxplot.png
+  count_characters:
+    cmd: python src/count_characters.py
+    deps:
+    - data/test2.tsv
+    - data/val2.tsv
+    - data/train2.tsv
+    - src/count_characters.py
+    - src/ds_loader.py
+    - src/conf.py
+    outs:
+    - plots/counts/test2.png
+    - plots/counts/val2.png
+    - plots/counts/train2.png
