@@ -9,8 +9,8 @@ stages:
       size: 871199
     - path: data/train2.tsv
       hash: md5
-      md5: 88394b09366a2014ada94c87863c4fd0
-      size: 6980142
+      md5: bea8cd5c33d842df214649819b1aea07
+      size: 7262560
     - path: data/val2.tsv
       hash: md5
       md5: e6e50c24f3d0054011cb5a206897e87f
@@ -21,8 +21,8 @@ stages:
       size: 1065
     - path: src/conf.py
       hash: md5
-      md5: c299c520fb06d0c2bec91297413b77db
-      size: 512
+      md5: 4df8a04d258ddefed7644df01279d9ae
+      size: 703
     - path: src/ds_loader.py
       hash: md5
       md5: 919c5145c4dd6d5c0bd1397685860b18
@@ -49,8 +49,8 @@ stages:
       size: 871199
     - path: data/train2.tsv
       hash: md5
-      md5: 88394b09366a2014ada94c87863c4fd0
-      size: 6980142
+      md5: bea8cd5c33d842df214649819b1aea07
+      size: 7262560
     - path: data/val2.tsv
       hash: md5
       md5: e6e50c24f3d0054011cb5a206897e87f
@@ -61,8 +61,8 @@ stages:
       size: 1977
     - path: src/conf.py
       hash: md5
-      md5: c299c520fb06d0c2bec91297413b77db
-      size: 512
+      md5: 4df8a04d258ddefed7644df01279d9ae
+      size: 703
     - path: src/ds_loader.py
       hash: md5
       md5: 919c5145c4dd6d5c0bd1397685860b18
@@ -89,8 +89,8 @@ stages:
       size: 871199
     - path: data/train2.tsv
       hash: md5
-      md5: 88394b09366a2014ada94c87863c4fd0
-      size: 6980142
+      md5: bea8cd5c33d842df214649819b1aea07
+      size: 7262560
     - path: data/val2.tsv
       hash: md5
       md5: e6e50c24f3d0054011cb5a206897e87f
@@ -101,8 +101,8 @@ stages:
       size: 1368
     - path: src/conf.py
       hash: md5
-      md5: c299c520fb06d0c2bec91297413b77db
-      size: 512
+      md5: 4df8a04d258ddefed7644df01279d9ae
+      size: 703
     - path: src/ds_loader.py
       hash: md5
       md5: 919c5145c4dd6d5c0bd1397685860b18
@@ -121,16 +121,16 @@ stages:
       size: 871199
     - path: data/train2.tsv
       hash: md5
-      md5: 88394b09366a2014ada94c87863c4fd0
-      size: 6980142
+      md5: bea8cd5c33d842df214649819b1aea07
+      size: 7262560
     - path: data/val2.tsv
       hash: md5
       md5: e6e50c24f3d0054011cb5a206897e87f
       size: 865142
     - path: src/conf.py
       hash: md5
-      md5: c299c520fb06d0c2bec91297413b77db
-      size: 512
+      md5: 4df8a04d258ddefed7644df01279d9ae
+      size: 703
     - path: src/count_characters.py
       hash: md5
       md5: bccc7de272eb322f6b631123e776047d

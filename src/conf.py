@@ -1,8 +1,14 @@
 DATA_DIR = "./data"
-DATASETS_BALANCE_DIR = "./plots/balance"
-DATASETS_BALANCE_DIFFS_DIR = "./plots/balance_diffs"
-DATASETS_BALANCE_MEDIAN_DIR = "./plots/balance_median"
-DATASETS_COUNTS_DIR = "./plots/counts"
+PLOTS_DIR = "./plots"
+CSV_DIR = "./csv"
+
+DATASETS_BALANCE_DIR = f"{PLOTS_DIR}/balance"
+DATASETS_BALANCE_DIFFS_DIR = f"{PLOTS_DIR}/balance_diffs"
+DATASETS_BALANCE_MEDIAN_DIR = f"{PLOTS_DIR}/balance_median"
+DATASETS_COUNTS_DIR = f"{PLOTS_DIR}/counts"
+DATASETS_GRAMMAR_CHECK_PLOT_DIR = f"{PLOTS_DIR}/grammar_check"
+
+DATASETS_GRAMMAR_CHECK_CSV_DIR = f"{CSV_DIR}/grammar_check"
 
 colors_dict = {
     'pants-fire': '#cd001a',
