@@ -2,5 +2,3 @@
     remote = storage
 ['remote "storage"']
     url = ssh://conan@mrworkshop.xyz:22/home/conan/analiza
-    user = conan
-    ask_passphrase = false
