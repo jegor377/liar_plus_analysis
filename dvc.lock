@@ -152,3 +152,91 @@ stages:
       hash: md5
       md5: f5f63558c13cfa73dd4b4d7283282ebe
       size: 251887
+  check_grammar_csv:
+    cmd: python src/check_grammar_csv.py
+    deps:
+    - path: data/test2.tsv
+      hash: md5
+      md5: 3a32026021e53663a7de5e948b28c2e4
+      size: 871199
+    - path: data/train2.tsv
+      hash: md5
+      md5: bea8cd5c33d842df214649819b1aea07
+      size: 7262560
+    - path: data/val2.tsv
+      hash: md5
+      md5: e6e50c24f3d0054011cb5a206897e87f
+      size: 865142
+    - path: src/check_grammar_csv.py
+      hash: md5
+      md5: f6c99e036d56746995042ea40a21ef37
+      size: 3182
+    - path: src/conf.py
+      hash: md5
+      md5: 4df8a04d258ddefed7644df01279d9ae
+      size: 703
+    - path: src/ds_loader.py
+      hash: md5
+      md5: 919c5145c4dd6d5c0bd1397685860b18
+      size: 645
+    outs:
+    - path: csv/grammar_check/test2.csv
+      hash: md5
+      md5: 711e5d6b39a07eb818bdd1bc3cef4f7d
+      size: 5416
+    - path: csv/grammar_check/train2.csv
+      hash: md5
+      md5: 3a7f3e65d0a348ed0abd758f7b5929b3
+      size: 16810
+    - path: csv/grammar_check/val2.csv
+      hash: md5
+      md5: a1fe9ff7191d64bea1bc186bd68603ac
+      size: 6038
+  check_grammar_plots:
+    cmd: python src/check_grammar_plots.py
+    deps:
+    - path: csv/grammar_check/test2.csv
+      hash: md5
+      md5: 711e5d6b39a07eb818bdd1bc3cef4f7d
+      size: 5416
+    - path: csv/grammar_check/train2.csv
+      hash: md5
+      md5: 3a7f3e65d0a348ed0abd758f7b5929b3
+      size: 16810
+    - path: csv/grammar_check/val2.csv
+      hash: md5
+      md5: a1fe9ff7191d64bea1bc186bd68603ac
+      size: 6038
+    - path: data/test2.tsv
+      hash: md5
+      md5: 3a32026021e53663a7de5e948b28c2e4
+      size: 871199
+    - path: data/train2.tsv
+      hash: md5
+      md5: bea8cd5c33d842df214649819b1aea07
+      size: 7262560
+    - path: data/val2.tsv
+      hash: md5
+      md5: e6e50c24f3d0054011cb5a206897e87f
+      size: 865142
+    - path: src/check_grammar_plots.py
+      hash: md5
+      md5: c1d08740470b5e63c304d3928545cb70
+      size: 2836
+    - path: src/conf.py
+      hash: md5
+      md5: 4df8a04d258ddefed7644df01279d9ae
+      size: 703
+    outs:
+    - path: plots/grammar_check/test2.png
+      hash: md5
+      md5: 8bb631076693ee11b599bca0ff6ea9d8
+      size: 245533
+    - path: plots/grammar_check/train2.png
+      hash: md5
+      md5: c1ce14041f1c0444fa5187ae92c73a3d
+      size: 239423
+    - path: plots/grammar_check/val2.png
+      hash: md5
+      md5: b114b542119463b537ffd61d7f5a3786
+      size: 241740

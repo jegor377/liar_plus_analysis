@@ -2,23 +2,12 @@ from __future__ import annotations
 
 import csv
 from collections import Counter
-from collections.abc import Callable
 
 import language_tool_python
-import matplotlib.pyplot as plt
 import tqdm
 
-from conf import (DATASETS_GRAMMAR_CHECK_CSV_DIR,
-                  DATASETS_GRAMMAR_CHECK_PLOT_DIR, label_colors)
+from conf import DATASETS_GRAMMAR_CHECK_CSV_DIR
 from ds_loader import load_dataset
-
-
-def autopct_format(values: list[int]) -> Callable[[float], str]:
-    def my_format(pct: float) -> str:
-        total = sum(values)
-        val = int(pct*total/100.0)
-        return '{:.1f}%\n({v:d})'.format(pct, v=val)
-    return my_format
 
 
 def create_csv_report(dataset_name: str,
@@ -60,44 +49,6 @@ def create_csv_report(dataset_name: str,
             writer.writerow(row)
 
 
-def create_plots(dataset_name: str,
-                 statement_errors: dict[str, Counter[str]],
-                 justification_errors: dict[str, Counter[str]]) -> None:
-    statement_sums: Counter[str] = Counter()
-    justification_sums: Counter[str] = Counter()
-
-    print(f"plotting dataset {dataset_name}...")
-
-    for label in statement_errors.keys():
-        statement_sums[label] = sum(statement_errors[label].values())
-
-    for label in justification_errors.keys():
-        justification_sums[label] = sum(justification_errors[label].values())
-
-    plt.cla()
-    plt.clf()
-    plt.close()
-    fig, axis = plt.subplots(1, 2)
-    axis[0].pie(statement_sums.values(),
-                labels=list(statement_sums.keys()),
-                autopct=autopct_format(list(statement_sums.values())),
-                colors=label_colors(list(statement_sums.keys())),
-                textprops={'fontsize': 8})
-    axis[0].title.set_text("statements")
-    axis[1].pie(justification_sums.values(),
-                labels=list(justification_sums.keys()),
-                autopct=autopct_format(list(justification_sums.values())),
-                colors=label_colors(list(justification_sums.keys())),
-                textprops={'fontsize': 8})
-    axis[1].title.set_text("justifications")
-    fig.tight_layout(pad=1.0)
-    plt.subplots_adjust(top=0.85)
-    fig.suptitle(f"grammatical errors in {dataset_name}", y=0.9)
-    plt.savefig(
-        f"{DATASETS_GRAMMAR_CHECK_PLOT_DIR}/{dataset_name}.png", dpi=400)
-    print(f'{dataset_name} dataset plotted correctly!')
-
-
 def process_dataset(dataset_name: str,
                     tool: language_tool_python.LanguageTool) -> None:
     statement_errors: dict[str, Counter[str]] = {}
@@ -136,7 +87,6 @@ def process_dataset(dataset_name: str,
 
     create_csv_report(dataset_name, error_ids,
                       statement_errors, justification_errors)
-    create_plots(dataset_name, statement_errors, justification_errors)
 
 
 if __name__ == '__main__':
