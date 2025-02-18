@@ -221,8 +221,8 @@ stages:
       size: 865142
     - path: src/check_grammar_plots.py
       hash: md5
-      md5: c1d08740470b5e63c304d3928545cb70
-      size: 2836
+      md5: 12a00e88629ea32addfac96552389097
+      size: 2840
     - path: src/conf.py
       hash: md5
       md5: 4df8a04d258ddefed7644df01279d9ae
