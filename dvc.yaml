@@ -49,3 +49,31 @@ stages:
     - plots/counts/test2.png
     - plots/counts/val2.png
     - plots/counts/train2.png
+  check_grammar_csv:
+    cmd: python src/check_grammar_csv.py
+    deps:
+    - data/test2.tsv
+    - data/val2.tsv
+    - data/train2.tsv
+    - src/check_grammar_csv.py
+    - src/ds_loader.py
+    - src/conf.py
+    outs:
+    - csv/grammar_check/test2.csv
+    - csv/grammar_check/val2.csv
+    - csv/grammar_check/train2.csv
+  check_grammar_plots:
+    cmd: python src/check_grammar_plots.py
+    deps:
+    - data/test2.tsv
+    - data/val2.tsv
+    - data/train2.tsv
+    - src/check_grammar_plots.py
+    - src/conf.py
+    - csv/grammar_check/test2.csv
+    - csv/grammar_check/val2.csv
+    - csv/grammar_check/train2.csv
+    outs:
+    - plots/grammar_check/test2.png
+    - plots/grammar_check/val2.png
+    - plots/grammar_check/train2.png

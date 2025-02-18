@@ -1,6 +1,4 @@
 [core]
     remote = storage
 ['remote "storage"']
-    url = ssh://conan@mrworkshop.xyz:/home/conan/analiza
-    port = 22
-    ask_passphrase = false
+    url = ssh://conan@mrworkshop.xyz:22/home/conan/analiza
