@@ -23,7 +23,7 @@ def create_csv_report(dataset_name: str,
         'true'
     ]
 
-    print('creating csv for {dataset_name} dataset...')
+    print(f'creating csv for {dataset_name} dataset...')
     csv_filepath = f"{DATASETS_GRAMMAR_CHECK_CSV_DIR}/{dataset_name}.csv"
     with open(csv_filepath, 'w', encoding='utf-8', newline='\n') as f:
         writer = csv.writer(f, delimiter='\t')
