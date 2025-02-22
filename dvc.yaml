@@ -77,3 +77,19 @@ stages:
     - plots/grammar_check/test2.png
     - plots/grammar_check/val2.png
     - plots/grammar_check/train2.png
+  count_questions:
+    cmd: python src/count_questions.py
+    deps:
+    - data/test2.tsv
+    - data/val2.tsv
+    - data/train2.tsv
+    - src/count_questions.py
+    - src/conf.py
+    - src/ds_loader.py
+    outs:
+    - plots/questions/test2.png
+    - plots/questions/val2.png
+    - plots/questions/train2.png
+    - csv/questions/test2.csv
+    - csv/questions/val2.csv
+    - csv/questions/train2.csv

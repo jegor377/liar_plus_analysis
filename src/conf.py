@@ -7,8 +7,10 @@ DATASETS_BALANCE_DIFFS_DIR = f"{PLOTS_DIR}/balance_diffs"
 DATASETS_BALANCE_MEDIAN_DIR = f"{PLOTS_DIR}/balance_median"
 DATASETS_COUNTS_DIR = f"{PLOTS_DIR}/counts"
 DATASETS_GRAMMAR_CHECK_PLOT_DIR = f"{PLOTS_DIR}/grammar_check"
+DATASETS_QUESTIONS_COUNT_DIR = f"{PLOTS_DIR}/questions"
 
 DATASETS_GRAMMAR_CHECK_CSV_DIR = f"{CSV_DIR}/grammar_check"
+DATASETS_QUESTIONS_COUNT_CSV_DIR = f"{CSV_DIR}/questions"
 
 colors_dict = {
     'pants-fire': '#cd001a',
