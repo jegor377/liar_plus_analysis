@@ -25,4 +25,6 @@ def load_dataset(name: str) -> pd.DataFrame:
         "context",
         "justification"
     ]
+    dataset.statement = dataset.statement.astype(str)
+    dataset.justification = dataset.justification.astype(str)
     return dataset

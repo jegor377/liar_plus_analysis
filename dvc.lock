@@ -5,7 +5,7 @@ stages:
     deps:
     - path: data/test2.tsv
       hash: md5
-      md5: 83ab29509e5c835e99fd72be7cb02696
+      md5: f3420a716c6d9af4c3b57a47cf8e51d0
       size: 893793
     - path: data/train2.tsv
       hash: md5
@@ -21,12 +21,12 @@ stages:
       size: 1065
     - path: src/conf.py
       hash: md5
-      md5: 4df8a04d258ddefed7644df01279d9ae
-      size: 703
+      md5: 6474fc27a0f8b287e41d13ba1ebacdc6
+      size: 819
     - path: src/ds_loader.py
       hash: md5
-      md5: 919c5145c4dd6d5c0bd1397685860b18
-      size: 645
+      md5: 954eb73dc4a04d3e9ec10b8e20b57841
+      size: 763
     outs:
     - path: plots/balance/test2.png
       hash: md5
@@ -45,7 +45,7 @@ stages:
     deps:
     - path: data/test2.tsv
       hash: md5
-      md5: 83ab29509e5c835e99fd72be7cb02696
+      md5: f3420a716c6d9af4c3b57a47cf8e51d0
       size: 893793
     - path: data/train2.tsv
       hash: md5
@@ -61,12 +61,12 @@ stages:
       size: 1977
     - path: src/conf.py
       hash: md5
-      md5: 4df8a04d258ddefed7644df01279d9ae
-      size: 703
+      md5: 6474fc27a0f8b287e41d13ba1ebacdc6
+      size: 819
     - path: src/ds_loader.py
       hash: md5
-      md5: 919c5145c4dd6d5c0bd1397685860b18
-      size: 645
+      md5: 954eb73dc4a04d3e9ec10b8e20b57841
+      size: 763
     outs:
     - path: plots/balance_diffs/test2-train2.png
       hash: md5
@@ -85,7 +85,7 @@ stages:
     deps:
     - path: data/test2.tsv
       hash: md5
-      md5: 83ab29509e5c835e99fd72be7cb02696
+      md5: f3420a716c6d9af4c3b57a47cf8e51d0
       size: 893793
     - path: data/train2.tsv
       hash: md5
@@ -101,12 +101,12 @@ stages:
       size: 1368
     - path: src/conf.py
       hash: md5
-      md5: 4df8a04d258ddefed7644df01279d9ae
-      size: 703
+      md5: 6474fc27a0f8b287e41d13ba1ebacdc6
+      size: 819
     - path: src/ds_loader.py
       hash: md5
-      md5: 919c5145c4dd6d5c0bd1397685860b18
-      size: 645
+      md5: 954eb73dc4a04d3e9ec10b8e20b57841
+      size: 763
     outs:
     - path: plots/balance_median/boxplot.png
       hash: md5
@@ -117,7 +117,7 @@ stages:
     deps:
     - path: data/test2.tsv
       hash: md5
-      md5: 83ab29509e5c835e99fd72be7cb02696
+      md5: f3420a716c6d9af4c3b57a47cf8e51d0
       size: 893793
     - path: data/train2.tsv
       hash: md5
@@ -129,35 +129,35 @@ stages:
       size: 865142
     - path: src/conf.py
       hash: md5
-      md5: 4df8a04d258ddefed7644df01279d9ae
-      size: 703
+      md5: 6474fc27a0f8b287e41d13ba1ebacdc6
+      size: 819
     - path: src/count_characters.py
       hash: md5
       md5: bccc7de272eb322f6b631123e776047d
       size: 3144
     - path: src/ds_loader.py
       hash: md5
-      md5: 919c5145c4dd6d5c0bd1397685860b18
-      size: 645
+      md5: 954eb73dc4a04d3e9ec10b8e20b57841
+      size: 763
     outs:
     - path: plots/counts/test2.png
       hash: md5
-      md5: 10a6d991f6f751b80c4f5c48237764e6
-      size: 252546
+      md5: cd7ba5e8fa61997632ba396c38cbac4c
+      size: 253567
     - path: plots/counts/train2.png
       hash: md5
-      md5: c5f9177f55e5ca34d2aeaf7373fdc11a
-      size: 254569
+      md5: 3a555d488d6ce781676c697d868f4775
+      size: 254184
     - path: plots/counts/val2.png
       hash: md5
-      md5: f5f63558c13cfa73dd4b4d7283282ebe
-      size: 251887
+      md5: 65ceebe515063c51dfbc08923ba3dcbe
+      size: 250780
   check_grammar_csv:
     cmd: python src/check_grammar_csv.py
     deps:
     - path: data/test2.tsv
       hash: md5
-      md5: 83ab29509e5c835e99fd72be7cb02696
+      md5: f3420a716c6d9af4c3b57a47cf8e51d0
       size: 893793
     - path: data/train2.tsv
       hash: md5
@@ -173,16 +173,16 @@ stages:
       size: 3183
     - path: src/conf.py
       hash: md5
-      md5: 4df8a04d258ddefed7644df01279d9ae
-      size: 703
+      md5: 6474fc27a0f8b287e41d13ba1ebacdc6
+      size: 819
     - path: src/ds_loader.py
       hash: md5
-      md5: 919c5145c4dd6d5c0bd1397685860b18
-      size: 645
+      md5: 954eb73dc4a04d3e9ec10b8e20b57841
+      size: 763
     outs:
     - path: csv/grammar_check/test2.csv
       hash: md5
-      md5: 22678e1c357cc8725197d907e45079e1
+      md5: 9f962db492d7c4b0e8f0b0f9c8578775
       size: 5371
     - path: csv/grammar_check/train2.csv
       hash: md5
@@ -197,7 +197,7 @@ stages:
     deps:
     - path: csv/grammar_check/test2.csv
       hash: md5
-      md5: 22678e1c357cc8725197d907e45079e1
+      md5: 9f962db492d7c4b0e8f0b0f9c8578775
       size: 5371
     - path: csv/grammar_check/train2.csv
       hash: md5
@@ -209,7 +209,7 @@ stages:
       size: 6038
     - path: data/test2.tsv
       hash: md5
-      md5: 83ab29509e5c835e99fd72be7cb02696
+      md5: f3420a716c6d9af4c3b57a47cf8e51d0
       size: 893793
     - path: data/train2.tsv
       hash: md5
@@ -225,13 +225,13 @@ stages:
       size: 2840
     - path: src/conf.py
       hash: md5
-      md5: 4df8a04d258ddefed7644df01279d9ae
-      size: 703
+      md5: 6474fc27a0f8b287e41d13ba1ebacdc6
+      size: 819
     outs:
     - path: plots/grammar_check/test2.png
       hash: md5
-      md5: aa67dd4f4b57ec45b295f4b050b4762f
-      size: 243700
+      md5: a63c0d599b5a754d03763bfb7acb2b05
+      size: 244815
     - path: plots/grammar_check/train2.png
       hash: md5
       md5: 932b26a4168fb640bce78dbce70093d3
@@ -240,3 +240,55 @@ stages:
       hash: md5
       md5: b114b542119463b537ffd61d7f5a3786
       size: 241740
+  count_questions:
+    cmd: python src/count_questions.py
+    deps:
+    - path: data/test2.tsv
+      hash: md5
+      md5: f3420a716c6d9af4c3b57a47cf8e51d0
+      size: 893793
+    - path: data/train2.tsv
+      hash: md5
+      md5: df33df94243c3a84766a143d23c145b1
+      size: 6980079
+    - path: data/val2.tsv
+      hash: md5
+      md5: e6e50c24f3d0054011cb5a206897e87f
+      size: 865142
+    - path: src/conf.py
+      hash: md5
+      md5: 6474fc27a0f8b287e41d13ba1ebacdc6
+      size: 819
+    - path: src/count_questions.py
+      hash: md5
+      md5: 69fd5b62ff4431de1c9474bc68f8b1d2
+      size: 5002
+    - path: src/ds_loader.py
+      hash: md5
+      md5: 954eb73dc4a04d3e9ec10b8e20b57841
+      size: 763
+    outs:
+    - path: csv/questions/test2.csv
+      hash: md5
+      md5: 2cc3e84d492b10cf4834aa1157ac2393
+      size: 14206
+    - path: csv/questions/train2.csv
+      hash: md5
+      md5: eef8f983d10d8155e03b37ac3e9fa74f
+      size: 103896
+    - path: csv/questions/val2.csv
+      hash: md5
+      md5: 69108e3ec3e911dfebaee97f8be8a272
+      size: 10247
+    - path: plots/questions/test2.png
+      hash: md5
+      md5: 1e4a35dcb47e742721edfbeeff43a52f
+      size: 221168
+    - path: plots/questions/train2.png
+      hash: md5
+      md5: da5aecdc6dd78d8053397357aacc6e0c
+      size: 225227
+    - path: plots/questions/val2.png
+      hash: md5
+      md5: 38744992a9004e8fe9ba45cbc3295ed0
+      size: 219223
