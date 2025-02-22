@@ -15,6 +15,7 @@ DATASETS_GRAMMAR_CHECK_CSV_DIR = f"{CSV_DIR}/grammar_check"
 DATASETS_QUESTIONS_COUNT_CSV_DIR = f"{CSV_DIR}/questions"
 DATASETS_COUNT_MIN_MAX_CHARS_CSV_DIR = f"{CSV_DIR}/count_min_max_chars"
 DATASETS_SENTIMENT_ANALYSIS_CSV_DIR = f'{CSV_DIR}/sentiment'
+DATASETS_SENTENCE_LENGTH_PLOT_DIR = F"{PLOTS_DIR}/sentence_length"
 
 colors_dict = {
     'pants-fire': '#cd001a',
