@@ -13,6 +13,8 @@ from conf import (DATASETS_QUESTIONS_COUNT_CSV_DIR,
                   DATASETS_QUESTIONS_COUNT_DIR, label_colors)
 from ds_loader import load_dataset
 
+ProcessResult = tuple[Counter[str], Counter[str], list[tuple[str, str, str]]]
+
 
 def autopct_format(values: list[int]) -> Callable[[float], str]:
     def my_format(pct: float) -> str:
@@ -25,11 +27,7 @@ def autopct_format(values: list[int]) -> Callable[[float], str]:
 def process_dataset(name: str,
                     model: AutoModelForSequenceClassification,
                     tokenizer: AutoTokenizer,
-                    nlp: spacy.Language) -> (tuple[Counter[str],
-                                                   Counter[str],
-                                                   list[tuple[str,
-                                                              str,
-                                                              str]]]):
+                    nlp: spacy.Language) -> ProcessResult:
     dataset = load_dataset(name)
 
     statements_counter: Counter[str] = Counter()
