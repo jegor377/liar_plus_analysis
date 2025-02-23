@@ -23,7 +23,10 @@ def process_dataset(dataset_name: str) -> None:
         
     avg_results = {key: np.mean(lengths_for_labels[key]) for key in lengths_for_labels}
     median_results = {key: np.median(lengths_for_labels[key]) for key in lengths_for_labels}
+    draw_plots(dataset_name, avg_results, median_results)
 
+
+def draw_plots(dataset_name, avg_results, median_results):
     fig, axis = plt.subplots(1, 2)
     colors_avg = label_colors(list(avg_results.keys()))
     colors_median = label_colors(list(median_results.keys()))
@@ -51,6 +54,7 @@ def process_dataset(dataset_name: str) -> None:
     fig.suptitle(f"sentence length in {dataset_name}", y=0.95)
     plt.savefig(
         f"{DATASETS_SENTENCE_LENGTH_PLOT_DIR}/{dataset_name}.png", dpi=400)
+    
 
 if __name__ == '__main__':
     process_dataset("test2")
