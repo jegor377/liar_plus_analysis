@@ -21,8 +21,8 @@ stages:
       size: 1065
     - path: src/conf.py
       hash: md5
-      md5: 6474fc27a0f8b287e41d13ba1ebacdc6
-      size: 819
+      md5: 5e7870c087399c2bcaafa4f23e2640a6
+      size: 946
     - path: src/ds_loader.py
       hash: md5
       md5: 954eb73dc4a04d3e9ec10b8e20b57841
@@ -61,8 +61,8 @@ stages:
       size: 1977
     - path: src/conf.py
       hash: md5
-      md5: 6474fc27a0f8b287e41d13ba1ebacdc6
-      size: 819
+      md5: 5e7870c087399c2bcaafa4f23e2640a6
+      size: 946
     - path: src/ds_loader.py
       hash: md5
       md5: 954eb73dc4a04d3e9ec10b8e20b57841
@@ -101,8 +101,8 @@ stages:
       size: 1368
     - path: src/conf.py
       hash: md5
-      md5: 6474fc27a0f8b287e41d13ba1ebacdc6
-      size: 819
+      md5: 5e7870c087399c2bcaafa4f23e2640a6
+      size: 946
     - path: src/ds_loader.py
       hash: md5
       md5: 954eb73dc4a04d3e9ec10b8e20b57841
@@ -129,8 +129,8 @@ stages:
       size: 865142
     - path: src/conf.py
       hash: md5
-      md5: 6474fc27a0f8b287e41d13ba1ebacdc6
-      size: 819
+      md5: 5e7870c087399c2bcaafa4f23e2640a6
+      size: 946
     - path: src/count_characters.py
       hash: md5
       md5: bccc7de272eb322f6b631123e776047d
@@ -173,8 +173,8 @@ stages:
       size: 3183
     - path: src/conf.py
       hash: md5
-      md5: 6474fc27a0f8b287e41d13ba1ebacdc6
-      size: 819
+      md5: 5e7870c087399c2bcaafa4f23e2640a6
+      size: 946
     - path: src/ds_loader.py
       hash: md5
       md5: 954eb73dc4a04d3e9ec10b8e20b57841
@@ -225,8 +225,8 @@ stages:
       size: 2840
     - path: src/conf.py
       hash: md5
-      md5: 6474fc27a0f8b287e41d13ba1ebacdc6
-      size: 819
+      md5: 5e7870c087399c2bcaafa4f23e2640a6
+      size: 946
     outs:
     - path: plots/grammar_check/test2.png
       hash: md5
@@ -257,8 +257,8 @@ stages:
       size: 865142
     - path: src/conf.py
       hash: md5
-      md5: 6474fc27a0f8b287e41d13ba1ebacdc6
-      size: 819
+      md5: 5e7870c087399c2bcaafa4f23e2640a6
+      size: 946
     - path: src/count_questions.py
       hash: md5
       md5: 69fd5b62ff4431de1c9474bc68f8b1d2
@@ -292,3 +292,91 @@ stages:
       hash: md5
       md5: 38744992a9004e8fe9ba45cbc3295ed0
       size: 219223
+  sentiment_analysis_csv:
+    cmd: python src/sentiment_analysis_csv.py
+    deps:
+    - path: data/test2.tsv
+      hash: md5
+      md5: f3420a716c6d9af4c3b57a47cf8e51d0
+      size: 893793
+    - path: data/train2.tsv
+      hash: md5
+      md5: df33df94243c3a84766a143d23c145b1
+      size: 6980079
+    - path: data/val2.tsv
+      hash: md5
+      md5: e6e50c24f3d0054011cb5a206897e87f
+      size: 865142
+    - path: src/conf.py
+      hash: md5
+      md5: 5e7870c087399c2bcaafa4f23e2640a6
+      size: 946
+    - path: src/ds_loader.py
+      hash: md5
+      md5: 954eb73dc4a04d3e9ec10b8e20b57841
+      size: 763
+    - path: src/sentiment_analysis_csv.py
+      hash: md5
+      md5: 8bd5a39d1a4e0e6f68d106aa65a39c0f
+      size: 2915
+    outs:
+    - path: csv/sentiment/test2.tsv
+      hash: md5
+      md5: 0734692c0ac54adc445101254eed2a07
+      size: 417
+    - path: csv/sentiment/train2.tsv
+      hash: md5
+      md5: 0acb8983bf79485bfd5fac4a45645ed0
+      size: 451
+    - path: csv/sentiment/val2.tsv
+      hash: md5
+      md5: 483f9b19f836dd0d640711101d5e0d3b
+      size: 419
+  sentiment_analysis_plot:
+    cmd: python src/sentiment_analysis_plot.py
+    deps:
+    - path: csv/sentiment/test2.tsv
+      hash: md5
+      md5: 0734692c0ac54adc445101254eed2a07
+      size: 417
+    - path: csv/sentiment/train2.tsv
+      hash: md5
+      md5: 0acb8983bf79485bfd5fac4a45645ed0
+      size: 451
+    - path: csv/sentiment/val2.tsv
+      hash: md5
+      md5: 483f9b19f836dd0d640711101d5e0d3b
+      size: 419
+    - path: data/test2.tsv
+      hash: md5
+      md5: f3420a716c6d9af4c3b57a47cf8e51d0
+      size: 893793
+    - path: data/train2.tsv
+      hash: md5
+      md5: df33df94243c3a84766a143d23c145b1
+      size: 6980079
+    - path: data/val2.tsv
+      hash: md5
+      md5: e6e50c24f3d0054011cb5a206897e87f
+      size: 865142
+    - path: src/conf.py
+      hash: md5
+      md5: 5e7870c087399c2bcaafa4f23e2640a6
+      size: 946
+    - path: src/sentiment_analysis_plot.py
+      hash: md5
+      md5: 840fd65a9874fb79d813f17c266b7660
+      size: 3115
+    outs:
+    - path: plots/sentiment/test2.png
+      hash: md5
+      md5: fe41fea811cac1c50959e600a6b5398c
+      size: 212874
+    - path: plots/sentiment/train2.png
+      hash: md5
+      md5: 1c60c142e7cbd3a0a6505cbe7a3ab939
+      size: 219062
+    - path: plots/sentiment/val2.png
+      hash: md5
+      md5: 42ecd525db8907c6206bb27729f839f5
+      size: 206689
