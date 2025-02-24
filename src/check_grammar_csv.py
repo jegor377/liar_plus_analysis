@@ -59,7 +59,7 @@ def process_dataset(dataset_name: str,
     dataset = load_dataset(dataset_name)
 
     print(f"checking grammar for {dataset_name} dataset...")
-    for _, row in tqdm.tqdm(dataset.iterrows()):
+    for _, row in tqdm.tqdm(dataset.iterrows(), total=dataset.shape[0]):
         label = row.label
         statement = row.statement
         justification = row.justification

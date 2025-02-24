@@ -93,6 +93,19 @@ stages:
     - csv/questions/test2.csv
     - csv/questions/val2.csv
     - csv/questions/train2.csv
+  count_min_max_chars:
+    cmd: python src/count_min_max_chars_csv.py
+    deps:
+    - data/test2.tsv
+    - data/val2.tsv
+    - data/train2.tsv
+    - src/count_min_max_chars_csv.py
+    - src/conf.py
+    - src/ds_loader.py
+    outs:
+    - csv/count_min_max_chars/test2.tsv
+    - csv/count_min_max_chars/val2.tsv
+    - csv/count_min_max_chars/train2.tsv
   sentiment_analysis_csv:
     cmd: python src/sentiment_analysis_csv.py
     deps:

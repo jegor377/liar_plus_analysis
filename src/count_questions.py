@@ -36,7 +36,7 @@ def process_dataset(name: str,
 
     print(f"counting questions in {name} dataset...")
 
-    for _, row in tqdm(dataset.iterrows()):
+    for _, row in tqdm(dataset.iterrows(), total=dataset.shape[0]):
         label = row.label
         statement = row.statement
         justification = row.justification
