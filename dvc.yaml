@@ -106,3 +106,31 @@ stages:
     - csv/count_min_max_chars/test2.tsv
     - csv/count_min_max_chars/val2.tsv
     - csv/count_min_max_chars/train2.tsv
+  sentiment_analysis_csv:
+    cmd: python src/sentiment_analysis_csv.py
+    deps:
+    - data/test2.tsv
+    - data/val2.tsv
+    - data/train2.tsv
+    - src/sentiment_analysis_csv.py
+    - src/conf.py
+    - src/ds_loader.py
+    outs:
+    - csv/sentiment/test2.tsv
+    - csv/sentiment/val2.tsv
+    - csv/sentiment/train2.tsv
+  sentiment_analysis_plot:
+    cmd: python src/sentiment_analysis_plot.py
+    deps:
+    - data/test2.tsv
+    - data/val2.tsv
+    - data/train2.tsv
+    - src/sentiment_analysis_plot.py
+    - src/conf.py
+    - csv/sentiment/test2.tsv
+    - csv/sentiment/val2.tsv
+    - csv/sentiment/train2.tsv
+    outs:
+    - plots/sentiment/test2.png
+    - plots/sentiment/val2.png
+    - plots/sentiment/train2.png
