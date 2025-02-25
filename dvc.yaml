@@ -134,3 +134,16 @@ stages:
     - plots/sentiment/test2.png
     - plots/sentiment/val2.png
     - plots/sentiment/train2.png
+  check_length_of_statements:
+    cmd: python src/check_length_of_sentences.py
+    deps:
+    - data/test2.tsv
+    - data/val2.tsv
+    - data/train2.tsv
+    - src/check_length_of_sentences.py
+    - src/conf.py
+    - src/ds_loader.py
+    outs:
+    - plots/sentence_length/test2.png
+    - plots/sentence_length/val2.png
+    - plots/sentence_length/train2.png
