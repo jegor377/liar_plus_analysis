@@ -169,12 +169,12 @@ stages:
       size: 865142
     - path: src/check_grammar_csv.py
       hash: md5
-      md5: 0bbbe9e118c6244fbc2447201b658d53
-      size: 3183
+      md5: ef576b917d6ef8e3ce654677a9572ece
+      size: 3207
     - path: src/conf.py
       hash: md5
-      md5: 5e7870c087399c2bcaafa4f23e2640a6
-      size: 946
+      md5: a0f0d9c07aaf94010019abdfabda3c0f
+      size: 1163
     - path: src/ds_loader.py
       hash: md5
       md5: 954eb73dc4a04d3e9ec10b8e20b57841
@@ -225,8 +225,8 @@ stages:
       size: 2840
     - path: src/conf.py
       hash: md5
-      md5: 5e7870c087399c2bcaafa4f23e2640a6
-      size: 946
+      md5: a0f0d9c07aaf94010019abdfabda3c0f
+      size: 1163
     outs:
     - path: plots/grammar_check/test2.png
       hash: md5
@@ -257,12 +257,12 @@ stages:
       size: 865142
     - path: src/conf.py
       hash: md5
-      md5: 5e7870c087399c2bcaafa4f23e2640a6
-      size: 946
+      md5: a0f0d9c07aaf94010019abdfabda3c0f
+      size: 1163
     - path: src/count_questions.py
       hash: md5
-      md5: 69fd5b62ff4431de1c9474bc68f8b1d2
-      size: 5002
+      md5: 9cd33c05b25e30a5cd107b14d383a5be
+      size: 5026
     - path: src/ds_loader.py
       hash: md5
       md5: 954eb73dc4a04d3e9ec10b8e20b57841
@@ -309,8 +309,8 @@ stages:
       size: 865142
     - path: src/conf.py
       hash: md5
-      md5: 5e7870c087399c2bcaafa4f23e2640a6
-      size: 946
+      md5: a0f0d9c07aaf94010019abdfabda3c0f
+      size: 1163
     - path: src/ds_loader.py
       hash: md5
       md5: 954eb73dc4a04d3e9ec10b8e20b57841
@@ -361,8 +361,8 @@ stages:
       size: 865142
     - path: src/conf.py
       hash: md5
-      md5: 5e7870c087399c2bcaafa4f23e2640a6
-      size: 946
+      md5: a0f0d9c07aaf94010019abdfabda3c0f
+      size: 1163
     - path: src/sentiment_analysis_plot.py
       hash: md5
       md5: e1593b8b3d495358b0da4334b167cdd2
@@ -380,3 +380,83 @@ stages:
       hash: md5
       md5: 42ecd525db8907c6206bb27729f839f5
       size: 206689
+  count_min_max_chars:
+    cmd: python src/count_min_max_chars_csv.py
+    deps:
+    - path: data/test2.tsv
+      hash: md5
+      md5: f3420a716c6d9af4c3b57a47cf8e51d0
+      size: 893793
+    - path: data/train2.tsv
+      hash: md5
+      md5: df33df94243c3a84766a143d23c145b1
+      size: 6980079
+    - path: data/val2.tsv
+      hash: md5
+      md5: e6e50c24f3d0054011cb5a206897e87f
+      size: 865142
+    - path: src/conf.py
+      hash: md5
+      md5: a0f0d9c07aaf94010019abdfabda3c0f
+      size: 1163
+    - path: src/count_min_max_chars_csv.py
+      hash: md5
+      md5: b9b61232ef74a8d78adb23a2f8bcd500
+      size: 1592
+    - path: src/ds_loader.py
+      hash: md5
+      md5: 954eb73dc4a04d3e9ec10b8e20b57841
+      size: 763
+    outs:
+    - path: csv/count_min_max_chars/test2.tsv
+      hash: md5
+      md5: c6eda421dce3da649bb2486d600ae870
+      size: 510
+    - path: csv/count_min_max_chars/train2.tsv
+      hash: md5
+      md5: 1132988378eb906a9547d31440c6cf8a
+      size: 527
+    - path: csv/count_min_max_chars/val2.tsv
+      hash: md5
+      md5: c494308efafa4447ecdc0e9181bbf09f
+      size: 520
+  check_length_of_statements:
+    cmd: python src/check_length_of_sentences.py
+    deps:
+    - path: data/test2.tsv
+      hash: md5
+      md5: f3420a716c6d9af4c3b57a47cf8e51d0
+      size: 893793
+    - path: data/train2.tsv
+      hash: md5
+      md5: df33df94243c3a84766a143d23c145b1
+      size: 6980079
+    - path: data/val2.tsv
+      hash: md5
+      md5: e6e50c24f3d0054011cb5a206897e87f
+      size: 865142
+    - path: src/check_length_of_sentences.py
+      hash: md5
+      md5: ad4b7d577e270994f1c8a9d17fc62d50
+      size: 2442
+    - path: src/conf.py
+      hash: md5
+      md5: a0f0d9c07aaf94010019abdfabda3c0f
+      size: 1163
+    - path: src/ds_loader.py
+      hash: md5
+      md5: 954eb73dc4a04d3e9ec10b8e20b57841
+      size: 763
+    outs:
+    - path: plots/sentence_length/test2.png
+      hash: md5
+      md5: 40b36b5d953a59dcf6920f8c3c4eb318
+      size: 146840
+    - path: plots/sentence_length/train2.png
+      hash: md5
+      md5: cd9730618da2e9e9e3754a6cecc6103d
+      size: 147610
+    - path: plots/sentence_length/val2.png
+      hash: md5
+      md5: f652db8a4586623972431523a4039eef
+      size: 150380
