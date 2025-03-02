@@ -243,55 +243,35 @@ stages:
   count_questions:
     cmd: python src/count_questions.py
     deps:
-    - path: data/test2.tsv
+    - path: data/result/sentiment/test2.tsv
       hash: md5
-      md5: f3420a716c6d9af4c3b57a47cf8e51d0
-      size: 893793
-    - path: data/train2.tsv
+      md5: bafca6fb1b9268133408e7d5a600966f
+      size: 876910
+    - path: data/result/sentiment/train2.tsv
       hash: md5
-      md5: df33df94243c3a84766a143d23c145b1
-      size: 6980079
-    - path: data/val2.tsv
+      md5: 681c3d524c1549d28ed7fa739e68b5e1
+      size: 7016948
+    - path: data/result/sentiment/val2.tsv
       hash: md5
-      md5: e6e50c24f3d0054011cb5a206897e87f
-      size: 865142
-    - path: src/conf.py
-      hash: md5
-      md5: a0f0d9c07aaf94010019abdfabda3c0f
-      size: 1163
+      md5: 42bd97a56a88fe3c3557fe6dbd9212ee
+      size: 870901
     - path: src/count_questions.py
       hash: md5
-      md5: 9cd33c05b25e30a5cd107b14d383a5be
-      size: 5026
-    - path: src/ds_loader.py
-      hash: md5
-      md5: 954eb73dc4a04d3e9ec10b8e20b57841
-      size: 763
+      md5: a17b05853d5c9bd5b9a4cf2c0dd87faa
+      size: 1024
     outs:
-    - path: csv/questions/test2.csv
+    - path: data/result/question/test2.tsv
       hash: md5
-      md5: 2cc3e84d492b10cf4834aa1157ac2393
-      size: 14206
-    - path: csv/questions/train2.csv
+      md5: 0de0ad26e7e33a879cbcb5fadd05cf38
+      size: 893542
+    - path: data/result/question/train2.tsv
       hash: md5
-      md5: eef8f983d10d8155e03b37ac3e9fa74f
-      size: 103896
-    - path: csv/questions/val2.csv
+      md5: 9a2e20eaef8a28869482eb67685da86f
+      size: 7149910
+    - path: data/result/question/val2.tsv
       hash: md5
-      md5: 69108e3ec3e911dfebaee97f8be8a272
-      size: 10247
-    - path: plots/questions/test2.png
-      hash: md5
-      md5: 1e4a35dcb47e742721edfbeeff43a52f
-      size: 221168
-    - path: plots/questions/train2.png
-      hash: md5
-      md5: da5aecdc6dd78d8053397357aacc6e0c
-      size: 225227
-    - path: plots/questions/val2.png
-      hash: md5
-      md5: 38744992a9004e8fe9ba45cbc3295ed0
-      size: 219223
+      md5: 877b1387a07254bc8d3cae3752eda043
+      size: 887550
   sentiment_analysis_csv:
     cmd: python src/sentiment_analysis_csv.py
     deps:
@@ -509,8 +489,8 @@ stages:
       size: 860018
     - path: src/sentiment_analysis.py
       hash: md5
-      md5: f47ac8bba82340c4e689394dbcd3dc0f
-      size: 1217
+      md5: 16340994fdffb8098e58219d2607b867
+      size: 1215
     outs:
     - path: data/result/sentiment/test2.tsv
       hash: md5
