@@ -20,7 +20,14 @@ def add_headers(dataset_name: str) -> None:
         "context",
         "justification"
     ])
-    df.to_csv(f"data/result/{dataset_name}.tsv", sep='\t')
+
+    # drop useless id column
+    df = df.drop("id", axis=1)
+
+    df.to_csv(
+        f"data/result/headers/{dataset_name}.tsv",
+        sep='\t',
+        index=False)
 
 
 if __name__ == '__main__':
