@@ -460,3 +460,35 @@ stages:
       hash: md5
       md5: f652db8a4586623972431523a4039eef
       size: 150380
+  add_header_names:
+    cmd: python src/add_header_names.py
+    deps:
+    - path: data/test2.tsv
+      hash: md5
+      md5: f3420a716c6d9af4c3b57a47cf8e51d0
+      size: 893793
+    - path: data/train2.tsv
+      hash: md5
+      md5: df33df94243c3a84766a143d23c145b1
+      size: 6980079
+    - path: data/val2.tsv
+      hash: md5
+      md5: e6e50c24f3d0054011cb5a206897e87f
+      size: 865142
+    - path: src/add_header_names.py
+      hash: md5
+      md5: cd07b05901f238c00a23c31df419d736
+      size: 695
+    outs:
+    - path: data/result/test2.tsv
+      hash: md5
+      md5: 26e5d971787ecc64d5bed5147d852aab
+      size: 876670
+    - path: data/result/train2.tsv
+      hash: md5
+      md5: fe8d630249ee9b59a1a48f054bf24358
+      size: 7031101
+    - path: data/result/val2.tsv
+      hash: md5
+      md5: 01a11003ae47e410427f1c0047d74072
+      size: 870642
