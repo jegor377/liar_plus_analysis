@@ -477,18 +477,50 @@ stages:
       size: 865142
     - path: src/add_header_names.py
       hash: md5
-      md5: cd07b05901f238c00a23c31df419d736
-      size: 695
+      md5: 567edef436c832f0226b8fad5088e511
+      size: 810
     outs:
-    - path: data/result/test2.tsv
+    - path: data/result/headers/test2.tsv
       hash: md5
-      md5: 26e5d971787ecc64d5bed5147d852aab
-      size: 876670
-    - path: data/result/train2.tsv
+      md5: 2556f453c50c1586eed7b1f9203fd958
+      size: 866056
+    - path: data/result/headers/train2.tsv
       hash: md5
-      md5: fe8d630249ee9b59a1a48f054bf24358
-      size: 7031101
-    - path: data/result/val2.tsv
+      md5: 107e279799e30e1a6c4e2a944592b480
+      size: 6930089
+    - path: data/result/headers/val2.tsv
       hash: md5
-      md5: 01a11003ae47e410427f1c0047d74072
-      size: 870642
+      md5: 1f38cb071904ef0ffbae3d8e7dd561b7
+      size: 860018
+  sentiment_analysis:
+    cmd: python src/sentiment_analysis.py
+    deps:
+    - path: data/result/headers/test2.tsv
+      hash: md5
+      md5: 2556f453c50c1586eed7b1f9203fd958
+      size: 866056
+    - path: data/result/headers/train2.tsv
+      hash: md5
+      md5: 107e279799e30e1a6c4e2a944592b480
+      size: 6930089
+    - path: data/result/headers/val2.tsv
+      hash: md5
+      md5: 1f38cb071904ef0ffbae3d8e7dd561b7
+      size: 860018
+    - path: src/sentiment_analysis.py
+      hash: md5
+      md5: f47ac8bba82340c4e689394dbcd3dc0f
+      size: 1217
+    outs:
+    - path: data/result/sentiment/test2.tsv
+      hash: md5
+      md5: bafca6fb1b9268133408e7d5a600966f
+      size: 876910
+    - path: data/result/sentiment/train2.tsv
+      hash: md5
+      md5: 681c3d524c1549d28ed7fa739e68b5e1
+      size: 7016948
+    - path: data/result/sentiment/val2.tsv
+      hash: md5
+      md5: 42bd97a56a88fe3c3557fe6dbd9212ee
+      size: 870901

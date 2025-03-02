@@ -7,6 +7,17 @@ stages:
     - data/val2.tsv
     - src/add_header_names.py
     outs:
-    - data/result/test2.tsv
-    - data/result/train2.tsv
-    - data/result/val2.tsv
+    - data/result/headers/test2.tsv
+    - data/result/headers/train2.tsv
+    - data/result/headers/val2.tsv
+  sentiment_analysis:
+    cmd: python src/sentiment_analysis.py
+    deps:
+    - data/result/headers/test2.tsv
+    - data/result/headers/train2.tsv
+    - data/result/headers/val2.tsv
+    - src/sentiment_analysis.py
+    outs:
+    - data/result/sentiment/test2.tsv
+    - data/result/sentiment/train2.tsv
+    - data/result/sentiment/val2.tsv
