@@ -21,3 +21,14 @@ stages:
     - data/result/sentiment/test2.tsv
     - data/result/sentiment/train2.tsv
     - data/result/sentiment/val2.tsv
+  count_questions:
+    cmd: python src/count_questions.py
+    deps:
+    - data/result/sentiment/test2.tsv
+    - data/result/sentiment/train2.tsv
+    - data/result/sentiment/val2.tsv
+    - src/count_questions.py
+    outs:
+    - data/result/question/test2.tsv
+    - data/result/question/train2.tsv
+    - data/result/question/val2.tsv

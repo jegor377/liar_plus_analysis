@@ -7,11 +7,6 @@ def add_sentiment_column(dataset_name: str,
                          sentiment_pipeline: Pipeline) -> None:
     df = pd.read_csv(f"data/result/headers/{dataset_name}.tsv", sep='\t')
 
-    label2tag = {
-        "LABEL_0": 'negative',
-        "LABEL_1": 'neutral',
-        "LABEL_2": 'positive'
-    }
     sentiments = []
 
     print(f"analysing sentiment of {dataset_name}...")
@@ -19,7 +14,7 @@ def add_sentiment_column(dataset_name: str,
     for _, row in tqdm(df.iterrows(), total=df.shape[0]):
         statement = str(row["statement"])
         sentiment = sentiment_pipeline(statement)[0]['label']
-        sentiments.append(label2tag[sentiment])
+        sentiments.append(sentiment)
 
     df["sentiment"] = sentiments
     df.to_csv(
@@ -34,6 +29,12 @@ if __name__ == '__main__':
         model="cardiffnlp/twitter-roberta-base-sentiment",
         truncation=True,
         max_length=512)
+    sentiment_pipeline.model.config.id2label = {
+        0: 'negative',
+        1: 'neutral',
+        2: 'positive'
+    }
+
     add_sentiment_column("test2", sentiment_pipeline)
     add_sentiment_column("train2", sentiment_pipeline)
     add_sentiment_column("val2", sentiment_pipeline)
