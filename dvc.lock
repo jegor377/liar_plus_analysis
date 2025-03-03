@@ -257,8 +257,8 @@ stages:
       size: 865142
     - path: src/count_questions.py
       hash: md5
-      md5: 9160e247c7ecc45df19dd89634090e2e
-      size: 1011
+      md5: 0ad21e9fb45d52364f41a5f4730b5d9a
+      size: 1037
     outs:
     - path: data/result/question/test2.tsv
       hash: md5
@@ -489,8 +489,8 @@ stages:
       size: 865142
     - path: src/sentiment_analysis.py
       hash: md5
-      md5: 1c8d3dad2d1008cbaad041344969157a
-      size: 1205
+      md5: 2899aebd2b371ca9c26ffdc5fd34c83c
+      size: 1207
     outs:
     - path: data/result/sentiment/test2.tsv
       hash: md5
@@ -521,8 +521,8 @@ stages:
       size: 865142
     - path: src/check_grammar.py
       hash: md5
-      md5: 1834d4c795af8554b2a8ae298e157c85
-      size: 1314
+      md5: 0a83921a0dc1207daeddb0596468665f
+      size: 1334
     outs:
     - path: data/result/grammar/errors/test2.tsv
       hash: md5
@@ -601,8 +601,8 @@ stages:
       size: 865142
     - path: src/final_join.py
       hash: md5
-      md5: 92d95c99d367699c707550ca4f7edf5c
-      size: 764
+      md5: 4bdb1527bc1ecbda0e4b7963993a2eed
+      size: 770
     params:
       params.yaml:
         stages:
