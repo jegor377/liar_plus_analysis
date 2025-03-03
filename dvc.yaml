@@ -32,3 +32,17 @@ stages:
     - data/result/question/test2.tsv
     - data/result/question/train2.tsv
     - data/result/question/val2.tsv
+  check_grammar:
+    cmd: python src/check_grammar.py
+    deps:
+    - data/result/question/test2.tsv
+    - data/result/question/train2.tsv
+    - data/result/question/val2.tsv
+    - src/check_grammar.py
+    outs:
+    - data/result/grammar/test2.tsv
+    - data/result/grammar/train2.tsv
+    - data/result/grammar/val2.tsv
+    - data/result/grammar/errors/test2.tsv
+    - data/result/grammar/errors/train2.tsv
+    - data/result/grammar/errors/val2.tsv
