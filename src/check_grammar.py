@@ -19,8 +19,9 @@ def add_grammar_check_column(dataset_name: str,
 
         label = "correct" if len(gramatical_errors) != 0 else "incorrect"
         grammar_labels.append(label)
-        for error in gramatical_errors:
-            errors[error] += 1
+        for match in gramatical_errors:
+            print(match.ruleId)
+            errors[match.ruleId] += 1
 
     df["grammar"] = grammar_labels
 
