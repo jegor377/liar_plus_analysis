@@ -504,3 +504,47 @@ stages:
       hash: md5
       md5: 42bd97a56a88fe3c3557fe6dbd9212ee
       size: 870901
+  check_grammar:
+    cmd: python src/check_grammar.py
+    deps:
+    - path: data/result/question/test2.tsv
+      hash: md5
+      md5: 0de0ad26e7e33a879cbcb5fadd05cf38
+      size: 893542
+    - path: data/result/question/train2.tsv
+      hash: md5
+      md5: 9a2e20eaef8a28869482eb67685da86f
+      size: 7149910
+    - path: data/result/question/val2.tsv
+      hash: md5
+      md5: 877b1387a07254bc8d3cae3752eda043
+      size: 887550
+    - path: src/check_grammar.py
+      hash: md5
+      md5: b94bd614301ef277cb0dcc4643bce62d
+      size: 1299
+    outs:
+    - path: data/result/grammar/errors/test2.tsv
+      hash: md5
+      md5: 0a298d618cb47367febbf8a469d3fa93
+      size: 1102
+    - path: data/result/grammar/errors/train2.tsv
+      hash: md5
+      md5: 9066ca947b19252e58ab9d4c0e5a5bb1
+      size: 3586
+    - path: data/result/grammar/errors/val2.tsv
+      hash: md5
+      md5: 44c1d88b34c892d087cb9da19d3e4ad0
+      size: 1195
+    - path: data/result/grammar/test2.tsv
+      hash: md5
+      md5: a05ed1e55266c2f065a5543a49fbc379
+      size: 896123
+    - path: data/result/grammar/train2.tsv
+      hash: md5
+      md5: 33f439783b60b4b52b3f0769b44e07a8
+      size: 7170464
+    - path: data/result/grammar/val2.tsv
+      hash: md5
+      md5: b813313908c62147df8b18a0a15a33a5
+      size: 890133
