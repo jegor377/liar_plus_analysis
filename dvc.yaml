@@ -1,21 +1,10 @@
 stages:
-  add_header_names:
-    cmd: python src/add_header_names.py
+  sentiment_analysis:
+    cmd: python src/sentiment_analysis.py
     deps:
     - data/test2.tsv
     - data/train2.tsv
     - data/val2.tsv
-    - src/add_header_names.py
-    outs:
-    - data/result/headers/test2.tsv
-    - data/result/headers/train2.tsv
-    - data/result/headers/val2.tsv
-  sentiment_analysis:
-    cmd: python src/sentiment_analysis.py
-    deps:
-    - data/result/headers/test2.tsv
-    - data/result/headers/train2.tsv
-    - data/result/headers/val2.tsv
     - src/sentiment_analysis.py
     outs:
     - data/result/sentiment/test2.tsv
@@ -24,9 +13,9 @@ stages:
   count_questions:
     cmd: python src/count_questions.py
     deps:
-    - data/result/sentiment/test2.tsv
-    - data/result/sentiment/train2.tsv
-    - data/result/sentiment/val2.tsv
+    - data/test2.tsv
+    - data/train2.tsv
+    - data/val2.tsv
     - src/count_questions.py
     outs:
     - data/result/question/test2.tsv
@@ -35,9 +24,9 @@ stages:
   check_grammar:
     cmd: python src/check_grammar.py
     deps:
-    - data/result/question/test2.tsv
-    - data/result/question/train2.tsv
-    - data/result/question/val2.tsv
+    - data/test2.tsv
+    - data/train2.tsv
+    - data/val2.tsv
     - src/check_grammar.py
     outs:
     - data/result/grammar/test2.tsv
@@ -46,3 +35,25 @@ stages:
     - data/result/grammar/errors/test2.tsv
     - data/result/grammar/errors/train2.tsv
     - data/result/grammar/errors/val2.tsv
+  final_join:
+    cmd: python src/final_join.py
+    params:
+    - stages
+    deps:
+    - data/test2.tsv
+    - data/train2.tsv
+    - data/val2.tsv
+    - src/final_join.py
+    - data/result/sentiment/test2.tsv
+    - data/result/sentiment/train2.tsv
+    - data/result/sentiment/val2.tsv
+    - data/result/question/test2.tsv
+    - data/result/question/train2.tsv
+    - data/result/question/val2.tsv
+    - data/result/grammar/test2.tsv
+    - data/result/grammar/train2.tsv
+    - data/result/grammar/val2.tsv
+    outs:
+    - data/result/final/test2.tsv
+    - data/result/final/train2.tsv
+    - data/result/final/val2.tsv

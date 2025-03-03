@@ -5,9 +5,8 @@ import pandas as pd
 from conf import DATA_DIR
 
 
-def load_dataset(name: str) -> pd.DataFrame:
-    dataset = pd.read_csv(f'{DATA_DIR}/{name}.tsv', header=None, sep="\t")
-    dataset.columns = [
+def load_dataset(dataset_name: str) -> pd.DataFrame:
+    dataset = pd.read_csv(f'{DATA_DIR}/{dataset_name}.tsv', sep="\t", names=[
         "id",
         "json_id",
         "label",
@@ -24,7 +23,5 @@ def load_dataset(name: str) -> pd.DataFrame:
         "pants_on_fire_counts",
         "context",
         "justification"
-    ]
-    dataset.statement = dataset.statement.astype(str)
-    dataset.justification = dataset.justification.astype(str)
+    ])
     return dataset

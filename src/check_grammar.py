@@ -4,10 +4,12 @@ import pandas as pd
 from language_tool_python import LanguageTool
 from tqdm import tqdm
 
+from ds_loader import load_dataset
+
 
 def add_grammar_check_column(dataset_name: str,
                              tool: LanguageTool) -> None:
-    df = pd.read_csv(f"data/result/question/{dataset_name}.tsv", sep="\t")
+    df = load_dataset(dataset_name)
 
     grammar_errors_count = []
     errors: Counter[str] = Counter()
@@ -28,8 +30,8 @@ def add_grammar_check_column(dataset_name: str,
     error_df.to_csv(f"data/result/grammar/errors/{dataset_name}.tsv",
                     sep="\t", index=False)
 
-    df.to_csv(f"data/result/grammar/{dataset_name}.tsv",
-              sep="\t", index=False)
+    df["grammar_errors"].to_csv(f"data/result/grammar/{dataset_name}.tsv",
+                                sep="\t", index=False)
 
 
 if __name__ == '__main__':
