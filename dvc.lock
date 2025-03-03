@@ -243,35 +243,35 @@ stages:
   count_questions:
     cmd: python src/count_questions.py
     deps:
-    - path: data/result/sentiment/test2.tsv
+    - path: data/test2.tsv
       hash: md5
-      md5: bafca6fb1b9268133408e7d5a600966f
-      size: 876910
-    - path: data/result/sentiment/train2.tsv
+      md5: f3420a716c6d9af4c3b57a47cf8e51d0
+      size: 893793
+    - path: data/train2.tsv
       hash: md5
-      md5: 681c3d524c1549d28ed7fa739e68b5e1
-      size: 7016948
-    - path: data/result/sentiment/val2.tsv
+      md5: df33df94243c3a84766a143d23c145b1
+      size: 6980079
+    - path: data/val2.tsv
       hash: md5
-      md5: 42bd97a56a88fe3c3557fe6dbd9212ee
-      size: 870901
+      md5: e6e50c24f3d0054011cb5a206897e87f
+      size: 865142
     - path: src/count_questions.py
       hash: md5
-      md5: a17b05853d5c9bd5b9a4cf2c0dd87faa
-      size: 1024
+      md5: 9160e247c7ecc45df19dd89634090e2e
+      size: 1011
     outs:
     - path: data/result/question/test2.tsv
       hash: md5
-      md5: 0de0ad26e7e33a879cbcb5fadd05cf38
-      size: 893542
+      md5: c12c65c14f1e60fa808c7132cda50723
+      size: 17916
     - path: data/result/question/train2.tsv
       hash: md5
-      md5: 9a2e20eaef8a28869482eb67685da86f
-      size: 7149910
+      md5: 5a449fbaebc559da1770a0282502f015
+      size: 143232
     - path: data/result/question/val2.tsv
       hash: md5
-      md5: 877b1387a07254bc8d3cae3752eda043
-      size: 887550
+      md5: 0cac78f3e5a201f03b39a4a797f5b11c
+      size: 17934
   sentiment_analysis_csv:
     cmd: python src/sentiment_analysis_csv.py
     deps:
@@ -475,54 +475,54 @@ stages:
   sentiment_analysis:
     cmd: python src/sentiment_analysis.py
     deps:
-    - path: data/result/headers/test2.tsv
+    - path: data/test2.tsv
       hash: md5
-      md5: 2556f453c50c1586eed7b1f9203fd958
-      size: 866056
-    - path: data/result/headers/train2.tsv
+      md5: f3420a716c6d9af4c3b57a47cf8e51d0
+      size: 893793
+    - path: data/train2.tsv
       hash: md5
-      md5: 107e279799e30e1a6c4e2a944592b480
-      size: 6930089
-    - path: data/result/headers/val2.tsv
+      md5: df33df94243c3a84766a143d23c145b1
+      size: 6980079
+    - path: data/val2.tsv
       hash: md5
-      md5: 1f38cb071904ef0ffbae3d8e7dd561b7
-      size: 860018
+      md5: e6e50c24f3d0054011cb5a206897e87f
+      size: 865142
     - path: src/sentiment_analysis.py
       hash: md5
-      md5: 16340994fdffb8098e58219d2607b867
-      size: 1215
+      md5: 1c8d3dad2d1008cbaad041344969157a
+      size: 1205
     outs:
     - path: data/result/sentiment/test2.tsv
       hash: md5
-      md5: bafca6fb1b9268133408e7d5a600966f
-      size: 876910
+      md5: d92befe3b14866b455ad1be3e10126f4
+      size: 12138
     - path: data/result/sentiment/train2.tsv
       hash: md5
-      md5: 681c3d524c1549d28ed7fa739e68b5e1
-      size: 7016948
+      md5: 562fe800ec9f2807aeea341e6f9a83ec
+      size: 97129
     - path: data/result/sentiment/val2.tsv
       hash: md5
-      md5: 42bd97a56a88fe3c3557fe6dbd9212ee
-      size: 870901
+      md5: f49e79c4d3baba217b26e7135e5e8b5a
+      size: 12168
   check_grammar:
     cmd: python src/check_grammar.py
     deps:
-    - path: data/result/question/test2.tsv
+    - path: data/test2.tsv
       hash: md5
-      md5: 0de0ad26e7e33a879cbcb5fadd05cf38
-      size: 893542
-    - path: data/result/question/train2.tsv
+      md5: f3420a716c6d9af4c3b57a47cf8e51d0
+      size: 893793
+    - path: data/train2.tsv
       hash: md5
-      md5: 9a2e20eaef8a28869482eb67685da86f
-      size: 7149910
-    - path: data/result/question/val2.tsv
+      md5: df33df94243c3a84766a143d23c145b1
+      size: 6980079
+    - path: data/val2.tsv
       hash: md5
-      md5: 877b1387a07254bc8d3cae3752eda043
-      size: 887550
+      md5: e6e50c24f3d0054011cb5a206897e87f
+      size: 865142
     - path: src/check_grammar.py
       hash: md5
-      md5: b94bd614301ef277cb0dcc4643bce62d
-      size: 1299
+      md5: 1834d4c795af8554b2a8ae298e157c85
+      size: 1314
     outs:
     - path: data/result/grammar/errors/test2.tsv
       hash: md5
@@ -538,13 +538,87 @@ stages:
       size: 1195
     - path: data/result/grammar/test2.tsv
       hash: md5
+      md5: c997497ecf992d6cc221c714b613c027
+      size: 3865
+    - path: data/result/grammar/train2.tsv
+      hash: md5
+      md5: ab1576e1a1f46ff98647bd26c47a3932
+      size: 30824
+    - path: data/result/grammar/val2.tsv
+      hash: md5
+      md5: 2f9868ad01c763a59ed74e31bed87985
+      size: 3868
+  final_join:
+    cmd: python src/final_join.py
+    deps:
+    - path: data/result/grammar/test2.tsv
+      hash: md5
+      md5: c997497ecf992d6cc221c714b613c027
+      size: 3865
+    - path: data/result/grammar/train2.tsv
+      hash: md5
+      md5: ab1576e1a1f46ff98647bd26c47a3932
+      size: 30824
+    - path: data/result/grammar/val2.tsv
+      hash: md5
+      md5: 2f9868ad01c763a59ed74e31bed87985
+      size: 3868
+    - path: data/result/question/test2.tsv
+      hash: md5
+      md5: c12c65c14f1e60fa808c7132cda50723
+      size: 17916
+    - path: data/result/question/train2.tsv
+      hash: md5
+      md5: 5a449fbaebc559da1770a0282502f015
+      size: 143232
+    - path: data/result/question/val2.tsv
+      hash: md5
+      md5: 0cac78f3e5a201f03b39a4a797f5b11c
+      size: 17934
+    - path: data/result/sentiment/test2.tsv
+      hash: md5
+      md5: d92befe3b14866b455ad1be3e10126f4
+      size: 12138
+    - path: data/result/sentiment/train2.tsv
+      hash: md5
+      md5: 562fe800ec9f2807aeea341e6f9a83ec
+      size: 97129
+    - path: data/result/sentiment/val2.tsv
+      hash: md5
+      md5: f49e79c4d3baba217b26e7135e5e8b5a
+      size: 12168
+    - path: data/test2.tsv
+      hash: md5
+      md5: f3420a716c6d9af4c3b57a47cf8e51d0
+      size: 893793
+    - path: data/train2.tsv
+      hash: md5
+      md5: df33df94243c3a84766a143d23c145b1
+      size: 6980079
+    - path: data/val2.tsv
+      hash: md5
+      md5: e6e50c24f3d0054011cb5a206897e87f
+      size: 865142
+    - path: src/final_join.py
+      hash: md5
+      md5: 92d95c99d367699c707550ca4f7edf5c
+      size: 764
+    params:
+      params.yaml:
+        stages:
+        - sentiment
+        - question
+        - grammar
+    outs:
+    - path: data/result/final/test2.tsv
+      hash: md5
       md5: a05ed1e55266c2f065a5543a49fbc379
       size: 896123
-    - path: data/result/grammar/train2.tsv
+    - path: data/result/final/train2.tsv
       hash: md5
       md5: 33f439783b60b4b52b3f0769b44e07a8
       size: 7170464
-    - path: data/result/grammar/val2.tsv
+    - path: data/result/final/val2.tsv
       hash: md5
       md5: b813313908c62147df8b18a0a15a33a5
       size: 890133

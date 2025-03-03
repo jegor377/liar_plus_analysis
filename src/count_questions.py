@@ -1,11 +1,12 @@
-import pandas as pd
 from tqdm import tqdm
 from transformers import Pipeline, pipeline
+
+from ds_loader import load_dataset
 
 
 def add_question_column(dataset_name: str,
                         pipe: Pipeline) -> None:
-    df = pd.read_csv(f"data/result/sentiment/{dataset_name}.tsv", sep="\t")
+    df = load_dataset(dataset_name)
 
     questions = []
 
@@ -17,9 +18,9 @@ def add_question_column(dataset_name: str,
 
     df["question"] = questions
 
-    df.to_csv(f"data/result/question/{dataset_name}.tsv",
-              sep="\t",
-              index=False)
+    df["question"].to_csv(f"data/result/question/{dataset_name}.tsv",
+                          sep="\t",
+                          index=False)
 
 
 if __name__ == '__main__':

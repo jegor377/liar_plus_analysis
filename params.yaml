@@ -1,0 +1,4 @@
+stages:
+- sentiment
+- question
+- grammar
