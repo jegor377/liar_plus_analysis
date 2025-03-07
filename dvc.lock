@@ -551,6 +551,54 @@ stages:
   final_join:
     cmd: python src/final_join.py
     deps:
+    - path: data/result/capital_letters_ratio/test2.tsv
+      hash: md5
+      md5: 365b2e6654f29e55ed256842cd8e9d90
+      size: 7592
+    - path: data/result/capital_letters_ratio/train2.tsv
+      hash: md5
+      md5: 7e401722bc7dbca9ee4741da1f184868
+      size: 60581
+    - path: data/result/capital_letters_ratio/val2.tsv
+      hash: md5
+      md5: c865ed98e3a91b49b8b6658c29ca9ab0
+      size: 7595
+    - path: data/result/curse/test2.tsv
+      hash: md5
+      md5: 91fc1a1016859fb819e6ac6e6ed3484a
+      size: 7738
+    - path: data/result/curse/train2.tsv
+      hash: md5
+      md5: 609f95d5fcc6af8cb580574a0f903907
+      size: 61904
+    - path: data/result/curse/val2.tsv
+      hash: md5
+      md5: 908dafe2ca59f82cdb73c49559cd3698
+      size: 7743
+    - path: data/result/emotions/test2.tsv
+      hash: md5
+      md5: 5bc7b3772f5f0e1266eca6f86c74877d
+      size: 11252
+    - path: data/result/emotions/train2.tsv
+      hash: md5
+      md5: c6e69ead80659470ee47df5db1b76475
+      size: 90019
+    - path: data/result/emotions/val2.tsv
+      hash: md5
+      md5: 4cf629dd74df8c4878b79ae837e70754
+      size: 11273
+    - path: data/result/gibberish/test2.tsv
+      hash: md5
+      md5: 3eeef7ef28670f53c6e4bfcbbf5ff36b
+      size: 10774
+    - path: data/result/gibberish/train2.tsv
+      hash: md5
+      md5: 6476f50a2f5046b87c37a7505c17eb1a
+      size: 87446
+    - path: data/result/gibberish/val2.tsv
+      hash: md5
+      md5: 84c12115d0e862251892619ab419f128
+      size: 10980
     - path: data/result/grammar/test2.tsv
       hash: md5
       md5: c997497ecf992d6cc221c714b613c027
@@ -563,6 +611,30 @@ stages:
       hash: md5
       md5: 2f9868ad01c763a59ed74e31bed87985
       size: 3868
+    - path: data/result/offensive/test2.tsv
+      hash: md5
+      md5: 7622aba5bb483672a1331f409fecfa19
+      size: 19164
+    - path: data/result/offensive/train2.tsv
+      hash: md5
+      md5: e08b7c4b44b239f41a36acb60bee630a
+      size: 153118
+    - path: data/result/offensive/val2.tsv
+      hash: md5
+      md5: 3a67864f47611e9f37b6fe3d482c292d
+      size: 19167
+    - path: data/result/political_bias/test2.tsv
+      hash: md5
+      md5: 8ea631f781030acf3b537b6ebbaaedef
+      size: 9037
+    - path: data/result/political_bias/train2.tsv
+      hash: md5
+      md5: 9f762a686276cbb43614c686e5386a19
+      size: 72250
+    - path: data/result/political_bias/val2.tsv
+      hash: md5
+      md5: d7cdc575781074fa64c172cd6631f5b8
+      size: 9086
     - path: data/result/question/test2.tsv
       hash: md5
       md5: c12c65c14f1e60fa808c7132cda50723
@@ -587,6 +659,18 @@ stages:
       hash: md5
       md5: f49e79c4d3baba217b26e7135e5e8b5a
       size: 12168
+    - path: data/result/statement_length/test2.tsv
+      hash: md5
+      md5: f1a3c82a581da52b5f482618190393da
+      size: 5781
+    - path: data/result/statement_length/train2.tsv
+      hash: md5
+      md5: a5b4e6e3a448880077b79211cae0572d
+      size: 46163
+    - path: data/result/statement_length/val2.tsv
+      hash: md5
+      md5: 0fac3245eb2858a78018327545e2cb5a
+      size: 5786
     - path: data/test2.tsv
       hash: md5
       md5: f3420a716c6d9af4c3b57a47cf8e51d0
@@ -609,16 +693,247 @@ stages:
         - sentiment
         - question
         - grammar
+        - capital_letters_ratio
+        - curse
+        - emotions
+        - gibberish
+        - offensive
+        - political_bias
+        - statement_length
     outs:
     - path: data/result/final/test2.tsv
       hash: md5
-      md5: a05ed1e55266c2f065a5543a49fbc379
-      size: 896123
+      md5: 12d187b60c78c2b5c882206510a48954
+      size: 953473
     - path: data/result/final/train2.tsv
       hash: md5
-      md5: 33f439783b60b4b52b3f0769b44e07a8
-      size: 7170464
+      md5: 56eebba6f8ac23b1a2d519f738d79faf
+      size: 7630111
     - path: data/result/final/val2.tsv
       hash: md5
-      md5: b813313908c62147df8b18a0a15a33a5
-      size: 890133
+      md5: 32ea4726d21757465162a3ab335a0281
+      size: 947760
+  statement_length:
+    cmd: python src/check_length_of_sentences.py
+    deps:
+    - path: data/test2.tsv
+      hash: md5
+      md5: f3420a716c6d9af4c3b57a47cf8e51d0
+      size: 893793
+    - path: data/train2.tsv
+      hash: md5
+      md5: df33df94243c3a84766a143d23c145b1
+      size: 6980079
+    - path: data/val2.tsv
+      hash: md5
+      md5: e6e50c24f3d0054011cb5a206897e87f
+      size: 865142
+    - path: src/check_length_of_sentences.py
+      hash: md5
+      md5: 4022e7e49e035e2171b8f850c95684a8
+      size: 637
+    outs:
+    - path: data/result/statement_length/test2.tsv
+      hash: md5
+      md5: f1a3c82a581da52b5f482618190393da
+      size: 5781
+    - path: data/result/statement_length/train2.tsv
+      hash: md5
+      md5: a5b4e6e3a448880077b79211cae0572d
+      size: 46163
+    - path: data/result/statement_length/val2.tsv
+      hash: md5
+      md5: 0fac3245eb2858a78018327545e2cb5a
+      size: 5786
+  capital_letters_ratio:
+    cmd: python src/count_capital_letters.py
+    deps:
+    - path: data/test2.tsv
+      hash: md5
+      md5: f3420a716c6d9af4c3b57a47cf8e51d0
+      size: 893793
+    - path: data/train2.tsv
+      hash: md5
+      md5: df33df94243c3a84766a143d23c145b1
+      size: 6980079
+    - path: data/val2.tsv
+      hash: md5
+      md5: e6e50c24f3d0054011cb5a206897e87f
+      size: 865142
+    - path: src/count_capital_letters.py
+      hash: md5
+      md5: ed5610ef4b6c6832efc41761ce4f6160
+      size: 887
+    outs:
+    - path: data/result/capital_letters_ratio/test2.tsv
+      hash: md5
+      md5: 365b2e6654f29e55ed256842cd8e9d90
+      size: 7592
+    - path: data/result/capital_letters_ratio/train2.tsv
+      hash: md5
+      md5: 7e401722bc7dbca9ee4741da1f184868
+      size: 60581
+    - path: data/result/capital_letters_ratio/val2.tsv
+      hash: md5
+      md5: c865ed98e3a91b49b8b6658c29ca9ab0
+      size: 7595
+  curse_analysis:
+    cmd: python src/curse_analysis.py
+    deps:
+    - path: data/test2.tsv
+      hash: md5
+      md5: f3420a716c6d9af4c3b57a47cf8e51d0
+      size: 893793
+    - path: data/train2.tsv
+      hash: md5
+      md5: df33df94243c3a84766a143d23c145b1
+      size: 6980079
+    - path: data/val2.tsv
+      hash: md5
+      md5: e6e50c24f3d0054011cb5a206897e87f
+      size: 865142
+    - path: src/curse_analysis.py
+      hash: md5
+      md5: 33be1b57a3161abe50197862f663c7a5
+      size: 960
+    outs:
+    - path: data/result/curse/test2.tsv
+      hash: md5
+      md5: 91fc1a1016859fb819e6ac6e6ed3484a
+      size: 7738
+    - path: data/result/curse/train2.tsv
+      hash: md5
+      md5: 609f95d5fcc6af8cb580574a0f903907
+      size: 61904
+    - path: data/result/curse/val2.tsv
+      hash: md5
+      md5: 908dafe2ca59f82cdb73c49559cd3698
+      size: 7743
+  emotions_analysis:
+    cmd: python src/emotions_analysis.py
+    deps:
+    - path: data/test2.tsv
+      hash: md5
+      md5: f3420a716c6d9af4c3b57a47cf8e51d0
+      size: 893793
+    - path: data/train2.tsv
+      hash: md5
+      md5: df33df94243c3a84766a143d23c145b1
+      size: 6980079
+    - path: data/val2.tsv
+      hash: md5
+      md5: e6e50c24f3d0054011cb5a206897e87f
+      size: 865142
+    - path: src/emotions_analysis.py
+      hash: md5
+      md5: 0021b5d57a1bdc1057bc7e50d860c319
+      size: 1015
+    outs:
+    - path: data/result/emotions/test2.tsv
+      hash: md5
+      md5: 5bc7b3772f5f0e1266eca6f86c74877d
+      size: 11252
+    - path: data/result/emotions/train2.tsv
+      hash: md5
+      md5: c6e69ead80659470ee47df5db1b76475
+      size: 90019
+    - path: data/result/emotions/val2.tsv
+      hash: md5
+      md5: 4cf629dd74df8c4878b79ae837e70754
+      size: 11273
+  gibberish_analysis:
+    cmd: python src/gibberish.py
+    deps:
+    - path: data/test2.tsv
+      hash: md5
+      md5: f3420a716c6d9af4c3b57a47cf8e51d0
+      size: 893793
+    - path: data/train2.tsv
+      hash: md5
+      md5: df33df94243c3a84766a143d23c145b1
+      size: 6980079
+    - path: data/val2.tsv
+      hash: md5
+      md5: e6e50c24f3d0054011cb5a206897e87f
+      size: 865142
+    - path: src/gibberish.py
+      hash: md5
+      md5: 120dd99aae67af2e5c93a25fa4a3eb17
+      size: 1019
+    outs:
+    - path: data/result/gibberish/test2.tsv
+      hash: md5
+      md5: 3eeef7ef28670f53c6e4bfcbbf5ff36b
+      size: 10774
+    - path: data/result/gibberish/train2.tsv
+      hash: md5
+      md5: 6476f50a2f5046b87c37a7505c17eb1a
+      size: 87446
+    - path: data/result/gibberish/val2.tsv
+      hash: md5
+      md5: 84c12115d0e862251892619ab419f128
+      size: 10980
+  offensiveness_analysis:
+    cmd: python src/offensive.py
+    deps:
+    - path: data/test2.tsv
+      hash: md5
+      md5: f3420a716c6d9af4c3b57a47cf8e51d0
+      size: 893793
+    - path: data/train2.tsv
+      hash: md5
+      md5: df33df94243c3a84766a143d23c145b1
+      size: 6980079
+    - path: data/val2.tsv
+      hash: md5
+      md5: e6e50c24f3d0054011cb5a206897e87f
+      size: 865142
+    - path: src/offensive.py
+      hash: md5
+      md5: 0935d37134d8dca1d90782a7b20f4c53
+      size: 1016
+    outs:
+    - path: data/result/offensive/test2.tsv
+      hash: md5
+      md5: 7622aba5bb483672a1331f409fecfa19
+      size: 19164
+    - path: data/result/offensive/train2.tsv
+      hash: md5
+      md5: e08b7c4b44b239f41a36acb60bee630a
+      size: 153118
+    - path: data/result/offensive/val2.tsv
+      hash: md5
+      md5: 3a67864f47611e9f37b6fe3d482c292d
+      size: 19167
+  political_bias_analysis:
+    cmd: python src/political_bias.py
+    deps:
+    - path: data/test2.tsv
+      hash: md5
+      md5: f3420a716c6d9af4c3b57a47cf8e51d0
+      size: 893793
+    - path: data/train2.tsv
+      hash: md5
+      md5: df33df94243c3a84766a143d23c145b1
+      size: 6980079
+    - path: data/val2.tsv
+      hash: md5
+      md5: e6e50c24f3d0054011cb5a206897e87f
+      size: 865142
+    - path: src/political_bias.py
+      hash: md5
+      md5: 72aeb63de9e3f72844878772d080b92f
+      size: 984
+    outs:
+    - path: data/result/political_bias/test2.tsv
+      hash: md5
+      md5: 8ea631f781030acf3b537b6ebbaaedef
+      size: 9037
+    - path: data/result/political_bias/train2.tsv
+      hash: md5
+      md5: 9f762a686276cbb43614c686e5386a19
+      size: 72250
+    - path: data/result/political_bias/val2.tsv
+      hash: md5
+      md5: d7cdc575781074fa64c172cd6631f5b8
+      size: 9086

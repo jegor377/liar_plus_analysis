@@ -35,6 +35,83 @@ stages:
     - data/result/grammar/errors/test2.tsv
     - data/result/grammar/errors/train2.tsv
     - data/result/grammar/errors/val2.tsv
+  statement_length:
+    cmd: python src/check_length_of_sentences.py
+    deps:
+    - data/test2.tsv
+    - data/train2.tsv
+    - data/val2.tsv
+    - src/check_length_of_sentences.py
+    outs:
+    - data/result/statement_length/test2.tsv
+    - data/result/statement_length/train2.tsv
+    - data/result/statement_length/val2.tsv
+  capital_letters_ratio:
+    cmd: python src/count_capital_letters.py
+    deps:
+    - data/test2.tsv
+    - data/train2.tsv
+    - data/val2.tsv
+    - src/count_capital_letters.py
+    outs:
+    - data/result/capital_letters_ratio/test2.tsv
+    - data/result/capital_letters_ratio/train2.tsv
+    - data/result/capital_letters_ratio/val2.tsv
+  curse_analysis:
+    cmd: python src/curse_analysis.py
+    deps:
+    - data/test2.tsv
+    - data/train2.tsv
+    - data/val2.tsv
+    - src/curse_analysis.py
+    outs:
+    - data/result/curse/test2.tsv
+    - data/result/curse/train2.tsv
+    - data/result/curse/val2.tsv
+  emotions_analysis:
+    cmd: python src/emotions_analysis.py
+    deps:
+    - data/test2.tsv
+    - data/train2.tsv
+    - data/val2.tsv
+    - src/emotions_analysis.py
+    outs:
+    - data/result/emotions/test2.tsv
+    - data/result/emotions/train2.tsv
+    - data/result/emotions/val2.tsv
+  gibberish_analysis:
+    cmd: python src/gibberish.py
+    deps:
+    - data/test2.tsv
+    - data/train2.tsv
+    - data/val2.tsv
+    - src/gibberish.py
+    outs:
+    - data/result/gibberish/test2.tsv
+    - data/result/gibberish/train2.tsv
+    - data/result/gibberish/val2.tsv
+  offensiveness_analysis:
+    cmd: python src/offensive.py
+    deps:
+    - data/test2.tsv
+    - data/train2.tsv
+    - data/val2.tsv
+    - src/offensive.py
+    outs:
+    - data/result/offensive/test2.tsv
+    - data/result/offensive/train2.tsv
+    - data/result/offensive/val2.tsv
+  political_bias_analysis:
+    cmd: python src/political_bias.py
+    deps:
+    - data/test2.tsv
+    - data/train2.tsv
+    - data/val2.tsv
+    - src/political_bias.py
+    outs:
+    - data/result/political_bias/test2.tsv
+    - data/result/political_bias/train2.tsv
+    - data/result/political_bias/val2.tsv
   final_join:
     cmd: python src/final_join.py
     params:
@@ -53,6 +130,27 @@ stages:
     - data/result/grammar/test2.tsv
     - data/result/grammar/train2.tsv
     - data/result/grammar/val2.tsv
+    - data/result/statement_length/test2.tsv
+    - data/result/statement_length/train2.tsv
+    - data/result/statement_length/val2.tsv
+    - data/result/capital_letters_ratio/test2.tsv
+    - data/result/capital_letters_ratio/train2.tsv
+    - data/result/capital_letters_ratio/val2.tsv
+    - data/result/curse/test2.tsv
+    - data/result/curse/train2.tsv
+    - data/result/curse/val2.tsv
+    - data/result/emotions/test2.tsv
+    - data/result/emotions/train2.tsv
+    - data/result/emotions/val2.tsv
+    - data/result/gibberish/test2.tsv
+    - data/result/gibberish/train2.tsv
+    - data/result/gibberish/val2.tsv
+    - data/result/offensive/test2.tsv
+    - data/result/offensive/train2.tsv
+    - data/result/offensive/val2.tsv
+    - data/result/political_bias/test2.tsv
+    - data/result/political_bias/train2.tsv
+    - data/result/political_bias/val2.tsv
     outs:
     - data/result/final/test2.tsv
     - data/result/final/train2.tsv

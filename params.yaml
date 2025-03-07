@@ -2,3 +2,10 @@ stages:
 - sentiment
 - question
 - grammar
+- capital_letters_ratio
+- curse
+- emotions
+- gibberish
+- offensive
+- political_bias
+- statement_length
