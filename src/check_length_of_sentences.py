@@ -10,9 +10,9 @@ def process_dataset(dataset_name: str) -> None:
     for _, row in df.iterrows():
         lengths_of_sentences.append(len(row.statement))
 
-    df["statement length"] = lengths_of_sentences
+    df["statement_length"] = lengths_of_sentences
 
-    df["statement length"].to_csv(f"data/result/statement_length/{dataset_name}.tsv",
+    df["statement_length"].to_csv(f"data/result/statement_length/{dataset_name}.tsv",
                     sep="\t", index=False)
     
 
