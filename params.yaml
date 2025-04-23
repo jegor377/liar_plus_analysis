@@ -8,4 +8,3 @@ stages:
 - gibberish
 - offensive
 - political_bias
-- statement_length

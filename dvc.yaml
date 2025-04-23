@@ -35,17 +35,6 @@ stages:
     - data/result/grammar/errors/test2.tsv
     - data/result/grammar/errors/train2.tsv
     - data/result/grammar/errors/val2.tsv
-  statement_length:
-    cmd: python src/check_length_of_sentences.py
-    deps:
-    - data/test2.tsv
-    - data/train2.tsv
-    - data/val2.tsv
-    - src/check_length_of_sentences.py
-    outs:
-    - data/result/statement_length/test2.tsv
-    - data/result/statement_length/train2.tsv
-    - data/result/statement_length/val2.tsv
   capital_letters_ratio:
     cmd: python src/count_capital_letters.py
     deps:
@@ -130,9 +119,6 @@ stages:
     - data/result/grammar/test2.tsv
     - data/result/grammar/train2.tsv
     - data/result/grammar/val2.tsv
-    - data/result/statement_length/test2.tsv
-    - data/result/statement_length/train2.tsv
-    - data/result/statement_length/val2.tsv
     - data/result/capital_letters_ratio/test2.tsv
     - data/result/capital_letters_ratio/train2.tsv
     - data/result/capital_letters_ratio/val2.tsv
