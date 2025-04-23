@@ -659,18 +659,6 @@ stages:
       hash: md5
       md5: f49e79c4d3baba217b26e7135e5e8b5a
       size: 12168
-    - path: data/result/statement_length/test2.tsv
-      hash: md5
-      md5: f1a3c82a581da52b5f482618190393da
-      size: 5781
-    - path: data/result/statement_length/train2.tsv
-      hash: md5
-      md5: e13095783030ae3d16bf91b6753d6dd5
-      size: 46162
-    - path: data/result/statement_length/val2.tsv
-      hash: md5
-      md5: 0fac3245eb2858a78018327545e2cb5a
-      size: 5786
     - path: data/test2.tsv
       hash: md5
       md5: f3420a716c6d9af4c3b57a47cf8e51d0
@@ -699,20 +687,19 @@ stages:
         - gibberish
         - offensive
         - political_bias
-        - statement_length
     outs:
     - path: data/result/final/test2.tsv
       hash: md5
-      md5: 12d187b60c78c2b5c882206510a48954
-      size: 953473
+      md5: c83db367689e9901de15424a9c1eac2e
+      size: 948976
     - path: data/result/final/train2.tsv
       hash: md5
-      md5: 0aca4637425b7b71b8d366a293b1177f
-      size: 7630110
+      md5: 74ab030dbf058d5b3c938a3b549e857c
+      size: 7594218
     - path: data/result/final/val2.tsv
       hash: md5
-      md5: 32ea4726d21757465162a3ab335a0281
-      size: 947760
+      md5: 35b7098d8995c35b0c4c65caafc07b85
+      size: 943259
   statement_length:
     cmd: python src/check_length_of_sentences.py
     deps:
