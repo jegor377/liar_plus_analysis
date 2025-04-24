@@ -101,6 +101,17 @@ stages:
     - data/result/political_bias/test2.tsv
     - data/result/political_bias/train2.tsv
     - data/result/political_bias/val2.tsv
+  article_generation:
+    cmd: python src/generate_articles.py
+    deps:
+    - data/test2.tsv
+    - data/train2.tsv
+    - data/val2.tsv
+    - src/generate_articles.py
+    outs:
+    - data/result/articles/test2.tsv
+    - data/result/articles/train2.tsv
+    - data/result/articles/val2.tsv
   final_join:
     cmd: python src/final_join.py
     params:
@@ -137,6 +148,9 @@ stages:
     - data/result/political_bias/test2.tsv
     - data/result/political_bias/train2.tsv
     - data/result/political_bias/val2.tsv
+    - data/result/articles/test2.tsv
+    - data/result/articles/train2.tsv
+    - data/result/articles/val2.tsv
     outs:
     - data/result/final/test2.tsv
     - data/result/final/train2.tsv
