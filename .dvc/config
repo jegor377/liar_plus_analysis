@@ -1,4 +1,4 @@
 [core]
     remote = storage
 ['remote "storage"']
-    url = ssh://conan@mrworkshop.xyz:22/home/conan/analiza
+    url = ssh://conan@cimmerian.win:2222/home/conan/analiza
