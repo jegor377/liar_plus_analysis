@@ -1,12 +1,14 @@
-from tqdm import tqdm
-from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
 import os
-os.environ["TORCHDYNAMO_DISABLE"] = "1"
+import shutil
 
 import torch
+from tqdm import tqdm
+from transformers import (AutoModelForCausalLM, AutoTokenizer,
+                          BitsAndBytesConfig)
+
 from ds_loader import load_dataset
 
-
+os.environ["TORCHDYNAMO_DISABLE"] = "1"
 
 
 def generate_extra_column(dataset_name: str,
@@ -20,14 +22,19 @@ def generate_extra_column(dataset_name: str,
     print(f"Generating text for dataset: {dataset_name}...")
 
     prompts = [
-        f"[INST] Imagine that you are a journalist working in a newspaper. Write an article for the following subject: '{row['statement']}'. Please write it as one continuous block of text, no formatting, no captioning, no headings. [/INST]"
+        "[INST] Imagine that you are a journalist working "
+        "in a newspaper. Write an article for the "
+        f"following subject: '{row['statement']}'. Please  "
+        "write it as one continuous block of text, no "
+        "formatting, no captioning, no headings. [/INST]"
         for _, row in df.iterrows()
     ]
 
     for i in tqdm(range(0, len(prompts), batch_size), desc="Generating"):
         batch_prompts = prompts[i:i+batch_size]
 
-        inputs = tokenizer(batch_prompts, return_tensors="pt", padding=True, truncation=True).to(device)
+        inputs = tokenizer(batch_prompts, return_tensors="pt",
+                           padding=True, truncation=True).to(device)
 
         with torch.no_grad():
             outputs = model.generate(
@@ -43,8 +50,9 @@ def generate_extra_column(dataset_name: str,
 
         for full_output in decoded:
             assistant_response = full_output.split("[/INST]")[-1].strip()
-            extra_column.append(assistant_response.replace('\t', '').replace('\n', ''))
-        
+            extra_column.append(assistant_response.replace(
+                '\t', '').replace('\n', ''))
+
     df["articles"] = extra_column
     df["articles"].to_csv(
         f"data/result/articles/{dataset_name}.tsv",
@@ -54,11 +62,18 @@ def generate_extra_column(dataset_name: str,
 
 
 if __name__ == '__main__':
+    shutil.copyfile("data/articles/test2.tsv",
+                    "data/result/articles/test2.tsv")
+    shutil.copyfile("data/articles/train2.tsv",
+                    "data/result/articles/train2.tsv")
+    shutil.copyfile("data/articles/val2.tsv", "data/result/articles/val2.tsv")
+    exit(0)
     torch._dynamo.config.suppress_errors = True
     torch._dynamo.config.capture_scalar_outputs = False
     torch._dynamo.disable()
 
-    bnb_config = BitsAndBytesConfig(load_in_4bit=True, bnb_4bit_use_double_quant=True)
+    bnb_config = BitsAndBytesConfig(
+        load_in_4bit=True, bnb_4bit_use_double_quant=True)
 
     model = AutoModelForCausalLM.from_pretrained(
         "google/gemma-2-2b-it",

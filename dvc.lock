@@ -762,8 +762,8 @@ stages:
       size: 865142
     - path: src/count_capital_letters.py
       hash: md5
-      md5: ed5610ef4b6c6832efc41761ce4f6160
-      size: 887
+      md5: d07e77e9a078c2e4d38db000cf62c254
+      size: 863
     outs:
     - path: data/result/capital_letters_ratio/test2.tsv
       hash: md5
@@ -794,8 +794,8 @@ stages:
       size: 865142
     - path: src/curse_analysis.py
       hash: md5
-      md5: a61a4e84516c82471a50e2565768af05
-      size: 999
+      md5: 52c0a5765e74a659e6d33da4bbd82401
+      size: 964
     outs:
     - path: data/result/curse/test2.tsv
       hash: md5
@@ -826,8 +826,8 @@ stages:
       size: 865142
     - path: src/emotions_analysis.py
       hash: md5
-      md5: 0021b5d57a1bdc1057bc7e50d860c319
-      size: 1015
+      md5: 00a3b7ed1f99fad4ee520dd03b120172
+      size: 980
     outs:
     - path: data/result/emotions/test2.tsv
       hash: md5
@@ -858,8 +858,8 @@ stages:
       size: 865142
     - path: src/gibberish.py
       hash: md5
-      md5: 120dd99aae67af2e5c93a25fa4a3eb17
-      size: 1019
+      md5: 2bfd49ca5540c1561c744be2bca00138
+      size: 984
     outs:
     - path: data/result/gibberish/test2.tsv
       hash: md5
@@ -890,8 +890,8 @@ stages:
       size: 865142
     - path: src/offensive.py
       hash: md5
-      md5: 0935d37134d8dca1d90782a7b20f4c53
-      size: 1016
+      md5: 10de4ae6d14c89ad24ad1e6cb6a784f4
+      size: 981
     outs:
     - path: data/result/offensive/test2.tsv
       hash: md5
@@ -922,8 +922,8 @@ stages:
       size: 865142
     - path: src/political_bias.py
       hash: md5
-      md5: 72aeb63de9e3f72844878772d080b92f
-      size: 984
+      md5: c166d2bbde79e2b9023ae2b253a010b7
+      size: 949
     outs:
     - path: data/result/political_bias/test2.tsv
       hash: md5
@@ -954,8 +954,8 @@ stages:
       size: 865142
     - path: src/generate_articles.py
       hash: md5
-      md5: 73f508d1c13810b6d0298ed964edec57
-      size: 2653
+      md5: 352d5f9c9f8d6e8f510d77ca7b3c6ffe
+      size: 2850
     outs:
     - path: data/result/articles/test2.tsv
       hash: md5
