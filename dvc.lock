@@ -954,8 +954,8 @@ stages:
       size: 865142
     - path: src/generate_articles.py
       hash: md5
-      md5: 352d5f9c9f8d6e8f510d77ca7b3c6ffe
-      size: 2850
+      md5: dbeb8350d0d640e038100e611a71192c
+      size: 3007
     outs:
     - path: data/result/articles/test2.tsv
       hash: md5
