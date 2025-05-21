@@ -15,7 +15,7 @@ def add_sentiment_column(dataset_name: str,
     for _, row in tqdm(df.iterrows(), total=df.shape[0]):
         statement = str(row["statement"])
         curse = curse_pipeline(statement)[0]['label']
-        curses.append("curse" if curse == "curse" else "non-curse")
+        curses.append("curse" if curse == "Curse" else "non-curse")
 
     df["curse"] = curses
     df["curse"].to_csv(
