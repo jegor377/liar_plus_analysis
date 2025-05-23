@@ -577,16 +577,16 @@ stages:
       size: 7595
     - path: data/result/curse/test2.tsv
       hash: md5
-      md5: f0505524b7ca2ca78fa71d25152d4ec8
-      size: 14120
+      md5: 62ec550015872513048ab693c9dd0dcb
+      size: 13988
     - path: data/result/curse/train2.tsv
       hash: md5
-      md5: 58e43b8e62617bd2f30796317a0281be
-      size: 112966
+      md5: 7ac367082c2656271167df01fd1d2a43
+      size: 111834
     - path: data/result/curse/val2.tsv
       hash: md5
-      md5: 874a18b0374e2771a6484ad253573ee1
-      size: 14131
+      md5: beeeecdc4d3b8e9e4d9fe91bdf8905e7
+      size: 14003
     - path: data/result/emotions/test2.tsv
       hash: md5
       md5: 5bc7b3772f5f0e1266eca6f86c74877d
@@ -703,16 +703,16 @@ stages:
     outs:
     - path: data/result/final/test2.tsv
       hash: md5
-      md5: fe80f50493f7e9454f2ea69586b3dc92
-      size: 2756246
+      md5: b8e1ec1bdb3c00b806813cdf7d74eb2b
+      size: 2756114
     - path: data/result/final/train2.tsv
       hash: md5
-      md5: b447cb3bd455117075f84395a4788bc3
-      size: 22024276
+      md5: 83b79e8b544582090e2c9a306bcdb6e7
+      size: 22023144
     - path: data/result/final/val2.tsv
       hash: md5
-      md5: e2ee81d8bb2e39c0b4b2401bd5893953
-      size: 2753348
+      md5: c0528443d26b191877116008f30ab411
+      size: 2753220
   statement_length:
     cmd: python src/check_length_of_sentences.py
     deps:
@@ -794,21 +794,21 @@ stages:
       size: 865142
     - path: src/curse_analysis.py
       hash: md5
-      md5: 52c0a5765e74a659e6d33da4bbd82401
+      md5: 888617404a7606fc9adf05a76ed06644
       size: 964
     outs:
     - path: data/result/curse/test2.tsv
       hash: md5
-      md5: f0505524b7ca2ca78fa71d25152d4ec8
-      size: 14120
+      md5: 62ec550015872513048ab693c9dd0dcb
+      size: 13988
     - path: data/result/curse/train2.tsv
       hash: md5
-      md5: 58e43b8e62617bd2f30796317a0281be
-      size: 112966
+      md5: 7ac367082c2656271167df01fd1d2a43
+      size: 111834
     - path: data/result/curse/val2.tsv
       hash: md5
-      md5: 874a18b0374e2771a6484ad253573ee1
-      size: 14131
+      md5: beeeecdc4d3b8e9e4d9fe91bdf8905e7
+      size: 14003
   emotions_analysis:
     cmd: python src/emotions_analysis.py
     deps:
