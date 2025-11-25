@@ -55,7 +55,7 @@ dvc repro
 
 ## Results
 
-The final dataset file, created by the pipeline, is published in the Releases section [here](https://github.com/jegor377/liar_plus_analysis/releases/tag/1.0). You can also access the dataset in [Kaggle](https://www.kaggle.com/datasets/igorsantarek/liar-plus-final-dataset/data).
+The final dataset file, created by the pipeline, is published in the Releases section [here](https://github.com/jegor377/liar_plus_analysis/releases/tag/1.0). You can also access the dataset from [Kaggle](https://www.kaggle.com/datasets/igorsantarek/liar-plus-final-dataset/data).
 
 ## Contributing
 
@@ -71,3 +71,4 @@ git checkout -b name
 
 
 4. Open new PR and add someone else to be a reviewer
+
